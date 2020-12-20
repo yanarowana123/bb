@@ -25,10 +25,38 @@ body {
   color: #ffffff;
 }
 
+.nav {
+  @extend %container;
+  margin-top: 42px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-size: 1.2rem;
+  background: linear-gradient(180deg, rgba(53, 57, 71, 0.3) 0%, rgba(76, 80, 96, 0.3) 100%);
+  border: 1px solid rgba(52, 56, 70, 0.5);
+  border-radius: 89px;
+
+  &-logo {
+    width: 40%;
+  }
+
+  &-items {
+    width: 60%;
+  }
+
+  a {
+    font-weight: 500;
+  }
+
+  .button.button-nav {
+    padding: 10px 40px;
+    background: #0CA074;
+    border-radius: 86px;
+  }
+}
 
 .header {
   @extend %container;
-  padding-top: 200px;
   position: relative;
   bottom: -100px;
 

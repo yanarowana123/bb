@@ -13,7 +13,7 @@ a {
   display: inline-block;
 }
 
-.footer, .faq, .no-worries, .gentle, .economy, .interiors-content, .header {
+.footer, .faq, .no-worries, .gentle, .economy, .interiors-content, .header, .nav {
   max-width: 1200px;
   padding: 0 20px;
   margin: 0 auto;
@@ -25,8 +25,32 @@ body {
   color: #ffffff;
 }
 
+.nav {
+  margin-top: 42px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-size: 1.2rem;
+  background: linear-gradient(180deg, rgba(53, 57, 71, 0.3) 0%, rgba(76, 80, 96, 0.3) 100%);
+  border: 1px solid rgba(52, 56, 70, 0.5);
+  border-radius: 89px;
+}
+.nav-logo {
+  width: 40%;
+}
+.nav-items {
+  width: 60%;
+}
+.nav a {
+  font-weight: 500;
+}
+.nav .button.button-nav {
+  padding: 10px 40px;
+  background: #0CA074;
+  border-radius: 86px;
+}
+
 .header {
-  padding-top: 200px;
   position: relative;
   bottom: -100px;
 }

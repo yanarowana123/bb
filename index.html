@@ -11,6 +11,19 @@
 </head>
 <body>
 
+<div class="nav flex justify-between items-center">
+    <div class="nav-logo">
+        <a href=""> <img src="img/logo.png" alt=""></a>
+    </div>
+    <div class="nav-items flex justify-between items-center">
+        <a href="#interiors">Interiors</a>
+        <a href="#specifications">Specifications</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#faq">FAQ</a>
+        <a href="" class="button button-nav">Buy</a>
+    </div>
+</div>
+
 <header class="header flex">
     <div class="header-content w-2/5">
         <h1>Ultra-slim Infrared Heating Panel for Home and Office</h1>
@@ -29,7 +42,7 @@
     </div>
 </header>
 
-<section class="interiors">
+<section class="interiors" id="interiors">
     <div class="interiors-content">
         <h2>Interiors</h2>
         <p>Perfect for every interiour: large office openspaces, houses/apartments and bathrooms.</p>
@@ -107,7 +120,7 @@
     </div>
 </section>
 
-<section class="specifications">
+<section class="specifications" id="specifications">
     <div class="features m-auto w-4/5 flex justify-between">
         <div class="feature__item mx-2">
             <div class="flex flex-col">
@@ -152,7 +165,7 @@
 </section>
 
 
-<section class="gallery">
+<section class="gallery" id="gallery">
     <div class="grid-container">
         <div class="first"><img src="img/cozy-living-room-with-sofa-PU5CRHH.png" alt=""></div>
         <div class="second"><img src="img/I5.png" alt=""></div>
@@ -433,7 +446,7 @@
 </section>
 
 
-<section class="faq flex justify-around" x-data="faq()">
+<section class="faq flex justify-around" x-data="faq()" id="faq">
     <h2 class="">Frequently
         Asked Questions</h2>
     <div class="questions">
