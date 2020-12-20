@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/tailwind.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="header flex">
+    <div class="header-content w-2/5">
+        <h1>Ultra-slim Infrared Heating Panel for Home and Office</h1>
+        <p>The search for your perfect heater is over – our EU-certified Premium Heater keeps you cozy and warm safely
+            and
+            efficiently. Suitable for any space, including bathrooms, Premium Heater does only what it was made to
+            do.
+        </p>
+        <a href="#" class="border-2 rounded-full border-white py-2 px-6 my-2">
+            Get it now!
+        </a>
+    </div>
+    <div class="header-bg-1">
+    </div>
+    <div class="header-bg-2">
+    </div>
+</header>
+
+<section class="interiors">
+    <div class="interiors-content">
+        <h2>Interiors</h2>
+        <p>Perfect for every interiour: large office openspaces, houses/apartments and bathrooms.</p>
+        <div class="features flex justify-around items-center">
+            <div>
+                <img src="img/image%2010.png" alt="">
+                <p>Office</p>
+            </div>
+            <div>
+                <img src="img/image%2010.png" alt="">
+                <p>Office</p>
+            </div>
+            <div>
+                <img src="img/image%209.png" alt="">
+                <p>Office</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="economy ">
+    <div class="flex">
+        <div class="economy-content">
+            <h2>Less energy - same heat</h2>
+            <p>We use a carbon-based innovative nanotech heating panel. That means way less energy consumption while
+                producing the same amount of heat just like other types of heaters.</p>
+        </div>
+        <div class="img-md">
+            <img src="img/G222%201.png" alt="">
+        </div>
+    </div>
+    <div class="watermark">Economy</div>
+</section>
+
+<section class="gentle">
+    <h2>Gentle heat</h2>
+    <p>In a way, it works like the Sun: the heater's infrared rays evenly and gently heat up space and the things in it,
+        keeping you warm even after you turn it off. This method is perfectly safe both for humans and pets.</p>
+    <div class="gentle-change-line flex justify-between">
+        <div class="regular-heater w-1/5">
+            <h3>Regular
+                heater</h3>
+            <p>heats and dries out air, warm air wents upside leaving a floor cold</p>
+        </div>
+        <div class="gentle-img text-center">
+            <img src="img/Group%2057.png" alt="" class="w-100">
+        </div>
+        <div class="premium-heater text-right w-1/5">
+            <h3>Premium
+                heater</h3>
+            <p>doesn't dry out air, evenly warms all objects in the room, including floor and walls</p>
+        </div>
+    </div>
+</section>
+
+<section class="no-worries">
+    <h2>No more worries for</h2>
+    <div class="features">
+        <div class="flex items-center">
+            <span>x</span>
+            <p>Dry air</p>
+        </div>
+        <div class="flex items-center">
+            <span>x</span>
+            <p>Dust</p>
+        </div>
+        <div class="flex items-center">
+            <span>x</span>
+            <p>Noises</p>
+        </div>
+        <div class="flex items-center">
+            <span>x</span>
+            <p>Odd smell</p>
+        </div>
+    </div>
+</section>
+
+<section class="specifications">
+    <div class="features m-auto w-4/5 flex justify-between">
+        <div class="feature__item mx-2">
+            <div class="flex flex-col">
+                <img src="img/eu%201.png" alt="">
+                <h3>Water resistant</h3>
+                <p>With an IP44 level of security you can safely use it in your bathroom.</p>
+            </div>
+        </div>
+        <div class="feature__item mx-2">
+            <div class="flex flex-col">
+                <img src="img/eu%201.png" alt="">
+                <h3>Made in EU</h3>
+                <p>Our factory is located in Poland and we use high-quality materials only.</p>
+            </div>
+        </div>
+        <div class="feature__item mx-2">
+            <div class="flex flex-col">
+                <img src="img/Group%2018.png" alt="">
+                <h3>Ultra-slim glass panel</h3>
+                <p>Premium Heater consists of two glass panels, 0,8 cm thick in total.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="specifications-content">
+        <h4>Specifications</h4>
+        <div class="specifications-content__table m-auto w-4/5">
+            <div class="flex justify-between">
+                <p>Heating area</p>
+                <p>15 m2</p>
+            </div>
+            <div class="flex justify-between">
+                <p>Heating area</p>
+                <p>15 m2</p>
+            </div>
+            <div class="flex justify-between">
+                <p>Heating area</p>
+                <p>15 m2</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="gallery">
+    <div class="grid-container">
+        <div class="first"><img src="img/cozy-living-room-with-sofa-PU5CRHH.png" alt=""></div>
+        <div class="second"><img src="img/I5.png" alt=""></div>
+        <div class="third"><img src="img/I1.png" alt=""></div>
+        <div class="fourth"><img src="img/I4.png" alt=""></div>
+        <div class="fifth"><img src="img/I2.png" alt=""></div>
+        <div class="sixth"><img src="img/I8.png" alt=""></div>
+
+    </div>
+</section>
+
+<section class="form-section">
+    <div class="form_1 "
+         x-data="form()"
+         x-init="
+              $watch('full_name', value => { validate('full_name');})
+              $watch('email', value => { validate('email') })
+              $watch('phone', value => { validate('phone') })
+              $watch('country', value => { validate('country') })
+              $watch('city', value => { validate('city') })
+              $watch('zip', value => { validate('zip') })
+              $watch('address1', value => { validate('address1') })
+              $watch('country_billing', value => { validate('country_billing') })
+              $watch('city_billing', value => { validate('city_billing') })
+              $watch('zip_billing', value => { validate('zip_billing') })
+              $watch('address1_billing', value => { validate('address1_billing') })
+            "
+    >
+        <div x-show="opened==1" class="form-box form-box-1">
+            <h2>Ultra-slim Infrared Heating Panel</h2>
+            <h4>Model: SKUGW001</h4>
+
+            <div class="white-panel flex flex-between items-center">
+                <div class="panel-img">
+                    <img src="img/white-panel.png" alt="">
+                </div>
+                <div class="counter-wrapper flex flex-col items-center w-2/5">
+                    <p>White Panel</p>
+                    <div class=" counter flex items-center justify-around">
+                        <div class="switch minus white-switch"
+                             @click="(blackQuantity!=0 && whiteQuantity>0)?whiteQuantity--:false">
+                            -
+                        </div>
+                        <input disabled type="number" min="1" value="1" x-model="whiteQuantity">
+                        <div class="switch plus white-switch" @click="whiteQuantity++">+</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="black-panel flex flex-between items-center">
+                <div class="counter-wrapper flex flex-col items-center w-2/5">
+                    <p>Black Panel</p>
+                    <div class=" counter flex items-center justify-around">
+                        <div class="switch minus white-switch"
+                             @click="(whiteQuantity!=0 && blackQuantity>0)?blackQuantity--:false">
+                            -
+                        </div>
+                        <input disabled type="number" min="1" value="1" x-model="blackQuantity">
+                        <div class="switch plus white-switch" @click="blackQuantity++">+</div>
+                    </div>
+                </div>
+                <div class="panel-img">
+                    <img src="img/black-panel.png" alt="">
+                </div>
+            </div>
+
+            <div class="buttons flex items-center justify-between">
+                <div class="flex items-center justify-between w-2/5">
+                    <div class="flex items-center justify-around w-4/5">
+                        <div>
+                            (x<span id="white-panel-quant" x-text="whiteQuantity"></span>)
+                            White panel
+                        </div>
+                        <div>
+                            (x<span id="black-panel-quant" x-text="blackQuantity"></span>)
+                            Black panel
+                        </div>
+                    </div>
+                    <div class="">
+                        Total: <span id="total-price"
+                                     x-text="whitePrice*whiteQuantity + blackPrice*blackQuantity"></span>
+                    </div>
+                </div>
+                <a @click.prevent="opened=2" href="#" class="button button-next" data-id="1">
+                    Order
+                </a>
+            </div>
+        </div>
+
+
+        <div x-show="opened==2" class="form-box form-box-2">
+            <h2>Shipping information</h2>
+            <h4>Please fill form below.</h4>
+            <form action="" id="form-2">
+                <input type="hidden" name="black_quantity" x-model="blackQuantity">
+                <input type="hidden" name="white_quantity" x-model="whiteQuantity">
+
+                <div class="flex justify-between mt-12">
+                    <input type="text"
+                           name="name"
+                           class="input"
+                           x-bind:placeholder="validation.full_name.msg?validation.full_name.msg:'Full Name'"
+                           x-bind:class="{'placeholder-red-400': validation.full_name.error } "
+                           x-model="full_name">
+                    <input type="text"
+                           class="input"
+                           name="phone"
+                           x-bind:placeholder="validation.phone.msg?validation.phone.msg:'Phone'"
+                           x-bind:class="{'placeholder-red-400': validation.phone.error } "
+                           x-model="phone">
+                    <input type="email"
+                           class="input"
+                           name="email"
+                           x-bind:placeholder="validation.email.msg?validation.email.msg:'E-mail'"
+                           x-bind:class="{'placeholder-red-400': validation.email.error } "
+                           x-model="email">
+                </div>
+                <div class="flex justify-between mt-12">
+                    <input type="text" class="input"
+                           name="country"
+                           x-bind:placeholder="validation.country.msg?validation.country.msg:'Country'"
+                           x-bind:class="{'placeholder-red-400': validation.country.error } "
+                           x-model="country">
+                    <input type="text"
+                           class="input"
+                           name="city"
+                           x-bind:placeholder="validation.city.msg?validation.city.msg:'City'"
+                           x-bind:class="{'placeholder-red-400': validation.city.error } "
+                           x-model="city">
+                    <input type="text"
+                           class="input"
+                           name="zip"
+                           x-bind:placeholder="validation.zip.msg?validation.zip.msg:'ZIP / Postcode'"
+                           x-bind:class="{'placeholder-red-400': validation.zip.error } "
+                           x-model="zip">
+
+                </div>
+
+                <div class="flex justify-between mt-12">
+                    <input type="text"
+                           class="input"
+                           name="address1"
+                           x-bind:placeholder="validation.address1.msg?validation.address1.msg:'Address line 1'"
+                           x-bind:class="{'placeholder-red-400': validation.address1.error } "
+                           x-model="address1">
+                    <input type="text"
+                           class="input"
+                           name="address2"
+                           x-bind:placeholder="validation.address2.msg?validation.address2.msg:'Address line 2'"
+                           x-bind:class="{'placeholder-red-400': validation.address2.error } "
+                           x-model="address2">
+                    <div class="flex text-center text-md-left switcher-wrapper">
+                        <p style="margin-right:20px;">Adress and the shipping adress are same.</p>
+                        <label class="switcher mr-2">
+                            <input type="checkbox" class="checkbox" name="is_active"
+                                   value="1" x-on:change="showBillingInfo = !showBillingInfo"
+                                   x-model="address_shipping_same"
+                            >
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div x-show="showBillingInfo">
+                    <h4 class="mt-12"> Billing information</h4>
+                    <div class="flex justify-between mt-12">
+                        <input type="text"
+                               class="input"
+                               name="country_billing"
+                               x-bind:placeholder="validation.country_billing.msg?validation.country_billing.msg:'Country'"
+                               x-bind:class="{'placeholder-red-400': validation.country_billing.error } "
+                               x-model="country_billing">
+                        <input type="text"
+                               class="input"
+                               name="city_billing"
+                               x-bind:placeholder="validation.city_billing.msg?validation.city_billing.msg:'City'"
+                               x-bind:class="{'placeholder-red-400': validation.city_billing.error } "
+                               x-model="city_billing">
+                        <input type="text"
+                               class="input"
+                               name="zip_billing"
+                               x-bind:placeholder="validation.zip_billing.msg?validation.zip_billing.msg:'ZIP / Postcode'"
+                               x-bind:class="{'placeholder-red-400': validation.zip_billing.error } "
+                               x-model="zip_billing">
+                    </div>
+                    <div class="flex justify-between mt-12">
+                        <input type="text"
+                               class="input"
+                               name="address1_billing"
+                               x-bind:placeholder="validation.address1_billing.msg?validation.address1_billing.msg:'Address line 1'"
+                               x-bind:class="{'placeholder-red-400': validation.address1_billing.error } "
+                               x-model="address1_billing">
+                        <input type="text"
+                               class="input"
+                               name="address2_billing"
+                               x-bind:placeholder="validation.address2_billing.msg?validation.address2_billing.msg:'Address line 2'"
+                               x-bind:class="{'placeholder-red-400': validation.address2_billing.error } "
+                               x-model="address2_billing">
+                        <input type="text" class="input opacity-0">
+                    </div>
+                </div>
+
+                <div class="flex justify-between mt-12">
+                    <input type="text"
+                           class="input"
+                           name="promocode"
+                           x-bind:placeholder="validation.promocode.msg?validation.promocode.msg:'Promocode (if you have one)'"
+                           x-bind:class="{'placeholder-red-400': validation.promocode.error } "
+                           x-model="promocode">
+                    <p>Payment method</p>
+                    <div class="flex items-center visa">
+                        <label class="switcher radio mr-4">
+                            <input type="radio" class="radio" name="payment_method"
+                                   x-ref="visa"
+                                   x-model="payment_method"
+                                   value="1" checked>
+                            <span class="slider radio round"></span>
+                        </label>
+                        <div class="ml-3 payment-method__img flex" @click="$refs.visa.checked=true">
+                            <img src="img/mastercard-seeklogo.com%201.png"
+                                 alt="">
+                            <img src="img/Visa_Inc._logo%201.png"
+                                 alt=""
+                                 class="ml-3">
+                        </div>
+                    </div>
+
+                    <div class="flex ">
+                        <label class="switcher radio mr-4">
+                            <input type="radio" class="radio" name="payment_method"
+                                   x-ref="paypal"
+                                   x-model="payment_method"
+                                   value="2">
+                            <span class="slider radio round"></span>
+                        </label>
+                        <div class="ml-3 payment-method__img" @click="$refs.paypal.checked=true">
+                            <img src="img/PayPal%201.png"
+                                 alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+            <div class="buttons flex justify-between items-center">
+                <a @click.prevent="opened=1" href="#" class="button button-prev" data-id="2">
+                    Prev
+                </a>
+                <button @click.prevent="submitData()" href="#" class="button button-next" data-id="2"
+                >
+                    Next
+                </button>
+            </div>
+        </div>
+
+
+        <div x-show="opened==3" class="form-box form-box-3 ">
+            <h2>Thank you for your purchase!</h2>
+            <h4>We will contact you as soon as possible.</h4>
+
+            <div class="flex flex-col items-center">
+                <div class="panel__img first">
+                    <img src="img/white-panel.png" alt="">
+                </div>
+                <div class="panel__img w-2/3 flex justify-center">
+                    <img src="img/black-panel.png" alt="">
+                </div>
+            </div>
+            <div class="buttons flex justify-center items-center">
+                <button @click.prevent="opened=1;blackQuantity=1;whiteQuantity=1;" href="#" class="button button-next"
+                        data-id="2">
+                    Another order
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="faq flex justify-around" x-data="faq()">
+    <h2 class="">Frequently
+        Asked Questions</h2>
+    <div class="questions">
+        <template x-for="(question,index) in questions" :key="index">
+            <div class="questions-item mb-4">
+                <div class="questions-item__title flex ">
+                    <p x-text="question.question" class="questions-item__title-question">
+                    </p>
+                    <div class="open-wrapper">
+                        <div class="open"
+                             x-on:click="questions[index].visible = !questions[index].visible"
+                             x-bind:class="{'opened':questions[index].visible}"
+                        ></div>
+                    </div>
+                </div>
+                <p class="questions-item__text" x-show="questions[index].visible" x-text="questions[index].answer"></p>
+            </div>
+        </template>
+    </div>
+
+</section>
+
+<footer class="footer flex justify-between">
+    <div class="copyrigt">
+        © All Right Reserved. Premium Heater 2020.
+    </div>
+    <div class="links flex justify-between w-2/5">
+        <a href="#" class="">Terms of use</a>
+        <a href="#" class="">Privacy Policy</a>
+    </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+
+<script>
+
+
+    function faq() {
+        return {
+            questions: [
+                {
+                    question: 'How to install the heating panel correctly and in what place to make it work effectively?',
+                    answer: 'For fast and even heating of the room and economical operation of the heater, it is recommended to install Premium heater in the place with the greatest heat loss (for example, under a window) at a distance of 10-12 cm from the floor.',
+                    visible: true
+                },
+                {
+                    question: '2?',
+                    answer: 2,
+                    visible: false
+                },
+            ]
+
+        }
+    }
+
+
+    function form() {
+        return {
+            opened: 1,
+            blackQuantity: 1,
+            whiteQuantity: 1,
+            whitePrice: 100,
+            blackPrice: 200,
+            showBillingInfo: false,
+            full_name: '',
+            phone: '',
+            email: '',
+            country: '',
+            city: '',
+            zip: '',
+            address1: '',
+            address2: '',
+            address1_billing: '',
+            address2_billing: '',
+            country_billing: '',
+            city_billing: '',
+            zip_billing: '',
+            promocode: '',
+            address_shipping_same: 0,
+            payment_method: 1,
+            has_errors: false,
+            validation: {
+                full_name: {
+                    rule: {
+                        required: true
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'Full name',
+                },
+                email: {
+                    rule: {
+                        required: true,
+                        email: true
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'E-mail',
+                },
+                phone: {
+                    rule: {
+                        required: true,
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'Phone',
+                },
+                country: {
+                    rule: {
+                        required: true,
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'Country',
+                },
+                city: {
+                    rule: {
+                        required: true,
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'City',
+                },
+                zip: {
+                    rule: {
+                        required: true,
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'ZIP / Postcode',
+                },
+                address1: {
+                    rule: {
+                        required: true,
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'Address line 1',
+                },
+                address2: {
+                    msg: '',
+                    error: false,
+                    title: 'Address line 2',
+                },
+                country_billing: {
+                    rule: {
+                        required_if_billing: true,
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'Country',
+                },
+                city_billing: {
+                    rule: {
+                        required_if_billing: true,
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'City',
+                },
+                zip_billing: {
+                    rule: {
+                        required_if_billing: true,
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'ZIP / Postcode',
+                },
+                address1_billing: {
+                    rule: {
+                        required_if_billing: true,
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'Address line 1',
+                },
+                address2_billing: {
+                    msg: '',
+                    error: false,
+                    title: 'Address line 2',
+                },
+                promocode: {
+
+                    msg: '',
+                    error: false,
+                    title: 'Promocode'
+                },
+            },
+            validate(field) {
+                for (const key in this.validation[field].rule) {
+                    let title = this.validation[field].title;
+                    if (key == 'required') {
+                        if (this[field].trim().length == 0) {
+                            this.validation[field].error = true;
+                            this.validation[field].msg = `${title} is required`;
+                        } else {
+                            this.validation[field].error = false;
+                            this.validation[field].msg = ``;
+                        }
+                    }
+
+                    if (key == 'required_if_billing') {
+                        if (this[field].trim().length == 0 && this.address_shipping_same == 1) {
+                            this.validation[field].error = true;
+                            this.validation[field].msg = `${title} is required`;
+                        } else {
+                            this.validation[field].error = false;
+                            this.validation[field].msg = ``;
+                        }
+                    }
+
+
+                    // if (key == 'email') {
+                    //     const rgx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                    //     if (rgx.test(this[field])) {
+                    //         this.validation[field].error = true;
+                    //         this.validation[field].msg = `${title} is not valid email address`;
+                    //     }
+                    // }
+                }
+
+                for (const field in this.validation) {
+                    if (this.validation[field].error == true) {
+                        this.has_errors = true;
+                    } else {
+                        this.has_errors = false;
+                    }
+                }
+            },
+            submitData() {
+                for (const field in this.validation) {
+                    this.validate(field);
+                }
+
+                for (const field in this.validation) {
+                    if (this.validation[field].error == true) {
+                        this.has_errors = true;
+                    }
+                }
+
+                console.log(this.has_errors);
+                if (!this.has_errors) {
+                    fetch('/contact', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify(this.formData)
+                    })
+                        .then(() => {
+                            this.showBillingInfo = false
+                            this.full_name = ''
+                            this.phone = '';
+                            this.email = '';
+                            this.country = '';
+                            this.city = '';
+                            this.zip = '';
+                            this.address1 = '';
+                            this.address2 = '';
+                            this.address1_billing = '';
+                            this.address2_billing = '';
+                            this.country_billing = '';
+                            this.city_billing = '';
+                            this.zip_billing = '';
+                            this.promocode = '';
+                            this.address_shipping_same = 0;
+                            this.payment_method = 1;
+                            this.has_errors = false;
+                            this.opened = 3;
+
+                        })
+                        .catch(() => {
+                        })
+
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
