@@ -16,6 +16,7 @@ html {
 body {
   font-size: 14px;
   font-size: 1.4rem;
+  width: 100%;
 }
 
 h1 {
@@ -44,6 +45,8 @@ body {
   background: #0CA074;
   border-radius: 86px;
 }
+
+
 
 .nav {
   @extend %container;
@@ -227,12 +230,14 @@ body {
   &-change-line {
     margin-top: 119px;
   }
+
+
 }
 
 .no-worries {
   font-weight: 500;
   padding: 300px 0;
-  background: url("../img/image 13.png") no-repeat;
+  background: url("../img/image 13.png") center/cover no-repeat;
 
   .no-worreiss {
     @extend %container;
@@ -317,9 +322,7 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 0px 0px;
-    grid-template-areas:
-    "first third fourth sixth"
-    "second third fifth fifth";
+    grid-template-areas: "first third fourth sixth" "second third fifth fifth";
   }
 
   .first {
@@ -350,6 +353,9 @@ body {
 
 
 .form-section {
+  position: relative;
+  top: -40px;
+
   .form-box {
     margin: 0 auto;
     width: 95%;
@@ -444,6 +450,10 @@ body {
     margin-top: 90px;
   }
 
+  .input-wrapper {
+    width: 30%;
+  }
+
   .input {
     font-size: 1.8rem;
     font-weight: 500;
@@ -453,7 +463,7 @@ body {
     color: #ffffff;
     text-align: left;
     border-bottom: 1px solid #ffffff;
-    width: 30%;
+    width: 100%;
   }
 
   form .row {
@@ -559,6 +569,10 @@ body {
     p {
       color: #757780;
     }
+  }
+
+  .gr {
+    color: #757780;
   }
 
   .form-box-3 {
@@ -720,6 +734,7 @@ body {
     &-change-line {
       margin-top: 0;
     }
+
   }
 
   .no-worries {
@@ -771,6 +786,8 @@ body {
   }
 
   .form-section {
+    position: static;
+    padding-top: 30px;
 
     .mobile {
       .total {
@@ -779,14 +796,6 @@ body {
       }
     }
 
-    .form-box {
-      margin: 0 auto;
-      width: 95%;
-      background: #3A3D49;
-      border-radius: 50px;
-      padding: 80px 30px 60px;
-      text-align: center;
-    }
 
     font-size: 1.8rem;
 
@@ -873,16 +882,22 @@ body {
       margin-top: 90px;
     }
 
+    .input-wrapper {
+      width: 100%;
+      margin-top: 20px;
+    }
+
     .input {
       font-size: 1.8rem;
       font-weight: 500;
       background: transparent;
       outline: none;
-      border: none;
       color: #ffffff;
       text-align: left;
-      border-bottom: 1px solid #ffffff;
-      width: 30%;
+      border: 2px solid #FFFFFF;
+      box-sizing: border-box;
+      border-radius: 86px;
+      padding: 10px 30px;
     }
 
     form .row {
@@ -896,8 +911,9 @@ body {
       height: 24px;
 
       &-wrapper {
-        width: 30%;
         font-size: 1.4rem;
+        margin: 20px 0;
+        width: 100%;
       }
     }
 
@@ -930,7 +946,6 @@ body {
       content: "";
       height: 16px;
       width: 16px;
-      left: 4px;
       bottom: 4px;
       background-color: white;
       -webkit-transition: .4s;
@@ -950,7 +965,9 @@ body {
       -ms-transform: translateX(26px);
       transform: translateX(26px);
       background-color: #F9B134;
+      //left: -10px;
     }
+
 
     .slider.round {
       border-radius: 34px;
@@ -981,7 +998,23 @@ body {
     }
 
     .payment-method__img {
+      border: 2px solid #757780;
+      box-sizing: border-box;
+      border-radius: 16px;
+      padding: 30px 20px;
+
+    }
+
+    .payment-method__img.active {
+      border-color: #F9B134;
+    }
+
+    .payment-method__img {
       cursor: pointer;
+    }
+
+    .switcher.radio {
+      display: none;
     }
 
     form {
@@ -994,6 +1027,18 @@ body {
       .panel__img.first {
         position: relative;
         bottom: -100px;
+      }
+    }
+
+    .mobile-img {
+      position: relative;
+
+      &.white {
+        left: -10%;
+      }
+
+      &.black {
+        right: -10%;
       }
     }
   }
@@ -1027,4 +1072,40 @@ body {
   }
 
 
+  .nav-mobile {
+    .topnav {
+      padding: 0 15px;
+      overflow: hidden;
+      background-color: #282B34;
+      position: relative;
+    }
+
+    #myLinks {
+      display: none;
+      background-color: #282B34;
+      font-size: 1.8rem;
+      padding: 0 15px;
+      a{
+        margin: 10px 0 ;
+      }
+    }
+
+    .topnav a {
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a.icon {
+      display: block;
+      position: static;
+      left: 0;
+      top: 0;
+    }
+
+    .active {
+      background: #282B34;
+      color: white;
+    }
+  }
 }

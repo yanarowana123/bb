@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="css/tailwind.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -21,7 +22,25 @@
         <a href="#specifications">Specifications</a>
         <a href="#gallery">Gallery</a>
         <a href="#faq">FAQ</a>
-        <a href="" class="button button-nav">Buy</a>
+        <a href="#form__wrapper" class="button button-nav">Buy</a>
+    </div>
+</div>
+
+<div class="nav-mobile  lg:hidden">
+    <div class="topnav flex items-center justify-between">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fas fa-bars"></i>
+        </a>
+        <a href="#home" class="active text-center flex justify-center">
+            <img src="img/logo.png" alt="">
+        </a>
+        <a href="#form__wrapper" class="button button-nav">Buy</a>
+    </div>
+    <div id="myLinks"class="flex-col">
+        <a href="#interiors">Interiors</a>
+        <a href="#specifications">Specifications</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#faq">FAQ</a>
     </div>
 </div>
 
@@ -35,7 +54,7 @@
                 efficiently. Suitable for any space, including bathrooms, Premium Heater does only what it was made to
                 do.
             </p>
-            <a href="#" class="hidden lg:inline-block border-2 rounded-full border-white py-2 px-6 my-2">
+            <a href="#" class="hidden lg:inline-block border-2 rounded-full border-white py-4 px-24 my-16">
                 Get it now!
             </a>
             <a href="" class="lg:hidden button w-full text-center mt-6">Get it now!</a>
@@ -86,7 +105,7 @@
             <div class="img-md hidden lg:block">
                 <img src="img/G222%201.png" alt="">
             </div>
-            <div class="mobile__img lg:hidden">
+            <div class="mobile__img flex justify-center lg:hidden">
                 <img src="img/G222(1).png" alt="">
             </div>
         </div>
@@ -104,14 +123,14 @@
         <h3 class="text-right">Regular
             heater</h3>
     </div>
-    <div class="gentle-change-line flex justify-between">
+    <div class="gentle-change-line flex justify-center lg:justify-between">
         <div class="regular-heater hidden lg:block w-1/4">
             <h3>Regular
                 heater</h3>
             <p>heats and dries out air, warm air wents upside leaving a floor cold</p>
         </div>
         <div class="gentle-img text-center lg:mx-8">
-            <img src="img/Group%2057.png" alt="" class="w-100">
+            <img src="img/Group%2057.png" alt="" class="w-full">
         </div>
         <div class="premium-heater text-right hidden lg:block w-1/4">
             <h3>Premium
@@ -202,7 +221,7 @@
     </div>
 </section>
 
-<section class="form-section">
+<section class="form-section" id="form__wrapper">
     <div class="form_1 "
          x-data="form()"
          x-init="
@@ -242,7 +261,7 @@
                         <img src="img/black-panel.png" alt="">
                     </div>
                     <p class="mb-4">Black Panel</p>
-                    <div class=" counter flex items-center justify-around">
+                    <div class=" counter flex items-center justify-around w-full">
                         <div class="switch minus white-switch"
                              @click="(whiteQuantity!=0 && blackQuantity>0)?blackQuantity--:false">
                             -
@@ -264,10 +283,10 @@
                             Total: <span
                                 x-text="whitePrice*whiteQuantity + blackPrice*blackQuantity"></span>
                         </div>
-                        <a @click.prevent="opened=2" href="#" class="button button-next w-full flex justify-center"
-                           data-id="1">
+                        <button @click.prevent="opened=2" class="button button-next w-full flex justify-center"
+                                data-id="1">
                             Order
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -324,9 +343,9 @@
                                      x-text="whitePrice*whiteQuantity + blackPrice*blackQuantity"></span>
                     </div>
                 </div>
-                <a @click.prevent="opened=2" href="#" class="button button-next" data-id="1">
+                <button @click.prevent="opened=2" class="button button-next" data-id="1">
                     Order
-                </a>
+                </button>
             </div>
         </div>
 
@@ -338,60 +357,90 @@
                 <input type="hidden" name="black_quantity" x-model="blackQuantity">
                 <input type="hidden" name="white_quantity" x-model="whiteQuantity">
 
-                <div class="flex justify-between mt-12">
-                    <input type="text"
-                           name="name"
-                           class="input"
-                           x-bind:placeholder="validation.full_name.msg?validation.full_name.msg:'Full Name'"
-                           x-bind:class="{'placeholder-red-400': validation.full_name.error } "
-                           x-model="full_name">
-                    <input type="text"
-                           class="input"
-                           name="phone"
-                           x-bind:placeholder="validation.phone.msg?validation.phone.msg:'Phone'"
-                           x-bind:class="{'placeholder-red-400': validation.phone.error } "
-                           x-model="phone">
-                    <input type="email"
-                           class="input"
-                           name="email"
-                           x-bind:placeholder="validation.email.msg?validation.email.msg:'E-mail'"
-                           x-bind:class="{'placeholder-red-400': validation.email.error } "
-                           x-model="email">
+                <div class="flex flex-col lg:flex-row justify-between lg:mt-12">
+                    <div class="input-wrapper flex flex-col">
+                        <input type="text"
+                               name="name"
+                               class="input"
+                               x-bind:placeholder="validation.full_name.msg?validation.full_name.msg:'Full Name'"
+                               x-bind:class="{'placeholder-red-400': validation.full_name.error } "
+                               x-model="full_name">
+                        <span class="text-red-400 mt-2" x-text="validation.full_name.msg">
+                        </span>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text"
+                               class="input"
+                               name="phone"
+                               x-bind:placeholder="validation.phone.msg?validation.phone.msg:'Phone'"
+                               x-bind:class="{'placeholder-red-400': validation.phone.error } "
+                               x-model="phone">
+                        <span class="text-red-400 mt-2" x-text="validation.phone.msg">
+                        </span>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="email"
+                               class="input"
+                               name="email"
+                               x-bind:placeholder="validation.email.msg?validation.email.msg:'E-mail'"
+                               x-bind:class="{'placeholder-red-400': validation.email.error } "
+                               x-model="email">
+                        <span class="text-red-400 mt-2" x-text="validation.email.msg">
+                        </span>
+                    </div>
                 </div>
-                <div class="flex justify-between mt-12">
-                    <input type="text" class="input"
-                           name="country"
-                           x-bind:placeholder="validation.country.msg?validation.country.msg:'Country'"
-                           x-bind:class="{'placeholder-red-400': validation.country.error } "
-                           x-model="country">
-                    <input type="text"
-                           class="input"
-                           name="city"
-                           x-bind:placeholder="validation.city.msg?validation.city.msg:'City'"
-                           x-bind:class="{'placeholder-red-400': validation.city.error } "
-                           x-model="city">
-                    <input type="text"
-                           class="input"
-                           name="zip"
-                           x-bind:placeholder="validation.zip.msg?validation.zip.msg:'ZIP / Postcode'"
-                           x-bind:class="{'placeholder-red-400': validation.zip.error } "
-                           x-model="zip">
-
+                <div class="flex flex-col lg:flex-row justify-between lg:mt-12">
+                    <div class="input-wrapper">
+                        <input type="text" class="input"
+                               name="country"
+                               x-bind:placeholder="validation.country.msg?validation.country.msg:'Country'"
+                               x-bind:class="{'placeholder-red-400': validation.country.error } "
+                               x-model="country">
+                        <span class="text-red-400 mt-2" x-text="validation.country.msg">
+                        </span>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text"
+                               class="input"
+                               name="city"
+                               x-bind:placeholder="validation.city.msg?validation.city.msg:'City'"
+                               x-bind:class="{'placeholder-red-400': validation.city.error } "
+                               x-model="city">
+                        <span class="text-red-400 mt-2" x-text="validation.city.msg">
+                        </span>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text"
+                               class="input"
+                               name="zip"
+                               x-bind:placeholder="validation.zip.msg?validation.zip.msg:'ZIP / Postcode'"
+                               x-bind:class="{'placeholder-red-400': validation.zip.error } "
+                               x-model="zip">
+                        <span class="text-red-400 mt-2" x-text="validation.zip.msg">
+                        </span>
+                    </div>
                 </div>
-
-                <div class="flex justify-between mt-12">
-                    <input type="text"
-                           class="input"
-                           name="address1"
-                           x-bind:placeholder="validation.address1.msg?validation.address1.msg:'Address line 1'"
-                           x-bind:class="{'placeholder-red-400': validation.address1.error } "
-                           x-model="address1">
-                    <input type="text"
-                           class="input"
-                           name="address2"
-                           x-bind:placeholder="validation.address2.msg?validation.address2.msg:'Address line 2'"
-                           x-bind:class="{'placeholder-red-400': validation.address2.error } "
-                           x-model="address2">
+                <div class="flex flex-col lg:flex-row justify-between lg:mt-12">
+                    <div class="input-wrapper">
+                        <input type="text"
+                               class="input"
+                               name="address1"
+                               x-bind:placeholder="validation.address1.msg?validation.address1.msg:'Address line 1'"
+                               x-bind:class="{'placeholder-red-400': validation.address1.error } "
+                               x-model="address1">
+                        <span class="text-red-400 mt-2" x-text="validation.address1.msg">
+                        </span>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text"
+                               class="input"
+                               name="address2"
+                               x-bind:placeholder="validation.address2.msg?validation.address2.msg:'Address line 2'"
+                               x-bind:class="{'placeholder-red-400': validation.address2.error } "
+                               x-model="address2">
+                        <span class="text-red-400 mt-2" x-text="validation.address2.msg">
+                        </span>
+                    </div>
                     <div class="flex text-center text-md-left switcher-wrapper">
                         <p style="margin-right:20px;">Adress and the shipping adress are same.</p>
                         <label class="switcher mr-2">
@@ -404,53 +453,86 @@
                     </div>
                 </div>
 
-                <div x-show="showBillingInfo">
+                <div x-show="showBillingInfo" class="hidden lg:block">
                     <h4 class="mt-12"> Billing information</h4>
                     <div class="flex justify-between mt-12">
-                        <input type="text"
-                               class="input"
-                               name="country_billing"
-                               x-bind:placeholder="validation.country_billing.msg?validation.country_billing.msg:'Country'"
-                               x-bind:class="{'placeholder-red-400': validation.country_billing.error } "
-                               x-model="country_billing">
-                        <input type="text"
-                               class="input"
-                               name="city_billing"
-                               x-bind:placeholder="validation.city_billing.msg?validation.city_billing.msg:'City'"
-                               x-bind:class="{'placeholder-red-400': validation.city_billing.error } "
-                               x-model="city_billing">
-                        <input type="text"
-                               class="input"
-                               name="zip_billing"
-                               x-bind:placeholder="validation.zip_billing.msg?validation.zip_billing.msg:'ZIP / Postcode'"
-                               x-bind:class="{'placeholder-red-400': validation.zip_billing.error } "
-                               x-model="zip_billing">
+                        <div class="input-wrapper">
+                            <input type="hidden" name="country_billing" x-model="country_billing">
+                            <input type="text"
+                                   class="input"
+                                   name="country_billing"
+                                   x-bind:placeholder="validation.country_billing.msg?validation.country_billing.msg:'Country'"
+                                   x-bind:class="{'placeholder-red-400': validation.country_billing.error } "
+                                   x-model="country_billing">
+                            <span class="text-red-400 mt-2" x-text="validation.country_billing.msg">
+                        </span>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="hidden" name="city_billing" x-model="city_billing">
+                            <input type="text"
+                                   class="input"
+                                   name="city_billing"
+                                   x-bind:placeholder="validation.city_billing.msg?validation.city_billing.msg:'City'"
+                                   x-bind:class="{'placeholder-red-400': validation.city_billing.error } "
+                                   x-model="city_billing">
+                            <span class="text-red-400 mt-2" x-text="validation.city_billing.msg">
+                        </span>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="hidden" name="zip_billing" x-model="zip_billing">
+                            <input type="text"
+                                   class="input"
+                                   name="zip_billing"
+                                   x-bind:placeholder="validation.zip_billing.msg?validation.zip_billing.msg:'ZIP / Postcode'"
+                                   x-bind:class="{'placeholder-red-400': validation.zip_billing.error } "
+                                   x-model="zip_billing">
+                            <span class="text-red-400 mt-2" x-text="validation.zip_billing.msg">
+                        </span>
+                        </div>
                     </div>
                     <div class="flex justify-between mt-12">
-                        <input type="text"
-                               class="input"
-                               name="address1_billing"
-                               x-bind:placeholder="validation.address1_billing.msg?validation.address1_billing.msg:'Address line 1'"
-                               x-bind:class="{'placeholder-red-400': validation.address1_billing.error } "
-                               x-model="address1_billing">
-                        <input type="text"
-                               class="input"
-                               name="address2_billing"
-                               x-bind:placeholder="validation.address2_billing.msg?validation.address2_billing.msg:'Address line 2'"
-                               x-bind:class="{'placeholder-red-400': validation.address2_billing.error } "
-                               x-model="address2_billing">
-                        <input type="text" class="input opacity-0">
+                        <div class="input-wrapper">
+                            <input type="hidden" name="address1_billing" x-model="address1_billing">
+                            <input type="text"
+                                   class="input"
+                                   name="address1_billing"
+                                   x-bind:placeholder="validation.address1_billing.msg?validation.address1_billing.msg:'Address line 1'"
+                                   x-bind:class="{'placeholder-red-400': validation.address1_billing.error } "
+                                   x-model="address1_billing">
+                            <span class="text-red-400 mt-2" x-text="validation.address1_billing.msg">
+                        </span>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="hidden" name="address2_billing" x-model="address2_billing">
+                            <input type="text"
+                                   class="input"
+                                   name="address2_billing"
+                                   x-bind:placeholder="validation.address2_billing.msg?validation.address2_billing.msg:'Address line 2'"
+                                   x-bind:class="{'placeholder-red-400': validation.address2_billing.error } "
+                                   x-model="address2_billing">
+                            <span class="text-red-400 mt-2" x-text="validation.address2_billing.msg">
+                        </span>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" class="input opacity-0">
+                        </div>
                     </div>
                 </div>
 
-                <div class="flex justify-between mt-12">
-                    <input type="text"
-                           class="input"
-                           name="promocode"
-                           x-bind:placeholder="validation.promocode.msg?validation.promocode.msg:'Promocode (if you have one)'"
-                           x-bind:class="{'placeholder-red-400': validation.promocode.error } "
-                           x-model="promocode">
+                <div class=" justify-between mt-12 hidden lg:flex">
+                    <input type="hidden" name="promocode" x-model="promocode">
+                    <div class="input-wrapper">
+                        <input type="text"
+                               class="input"
+                               name="promocode"
+                               x-bind:placeholder="validation.promocode.msg?validation.promocode.msg:'Promocode (if you have one)'"
+                               x-bind:class="{'placeholder-red-400': validation.promocode.error } "
+                               x-model="promocode">
+                        <span class="text-red-400 mt-2" x-text="validation.promocode.msg">
+                        </span>
+                    </div>
                     <p>Payment method</p>
+                    <input type="hidden" name="payment_method" x-model="payment_method">
                     <div class="flex items-center visa">
                         <label class="switcher radio mr-4">
                             <input type="radio" class="radio" name="payment_method"
@@ -459,7 +541,8 @@
                                    value="1" checked>
                             <span class="slider radio round"></span>
                         </label>
-                        <div class="ml-6 payment-method__img flex" @click="$refs.visa.checked=true">
+                        <div class="ml-6 payment-method__img flex"
+                             @click="payment_method=1">
                             <img src="img/mastercard-seeklogo.com%201.png"
                                  alt="">
                             <img src="img/Visa_Inc._logo%201.png"
@@ -476,7 +559,8 @@
                                    value="2">
                             <span class="slider radio round"></span>
                         </label>
-                        <div class="ml-6 payment-method__img" @click="$refs.paypal.checked=true">
+                        <div class="ml-6 payment-method__img"
+                             @click="payment_method=2">
                             <img src="img/PayPal%201.png"
                                  alt="">
                         </div>
@@ -485,23 +569,156 @@
 
             </form>
 
-            <div class="buttons flex justify-between items-center">
-                <a @click.prevent="opened=1" href="#" class="button button-prev" data-id="2">
+            <div class="lg:hidden">
+                <button @click.prevent="nextOnMobile()" class="button button-next w-full flex justify-center"
+                        data-id="2"
+                >
+                    Next
+                </button>
+            </div>
+
+            <div class="buttons hidden lg:flex justify-between items-center">
+                <button @click.prevent="opened=1" class="button button-prev" data-id="2">
                     Prev
-                </a>
-                <button @click.prevent="submitData()" href="#" class="button button-next" data-id="2"
+                </button>
+                <button @click.prevent="submitData()" class="button button-next" data-id="2"
                 >
                     Next
                 </button>
             </div>
         </div>
 
+        <div x-show="opened==4" class="form-box form-box-3 lg:hidden">
+            <h2>Shipping information</h2>
+            <h4 class="">Please fill form below.</h4>
+            <div class="input-wrapper">
+                <input type="text"
+                       class="input"
+                       name="promocode"
+                       x-bind:placeholder="validation.promocode.msg?validation.promocode.msg:'Promocode (if you have one)'"
+                       x-bind:class="{'placeholder-red-400': validation.promocode.error } "
+                       x-model="promocode">
+                <span class="text-red-400 mt-2" x-text="validation.promocode.msg">
+                        </span>
+            </div>
+            <p class="gr my-8">Payment method</p>
+            <div class="flex justify-center mb-12">
+                <div class="flex items-center visa mr-4">
+                    <label class="switcher radio">
+                        <input type="radio" class="radio" name="payment_method"
+                               x-model="payment_method"
+                               value="1" checked>
+                        <span class="slider radio round"></span>
+                    </label>
+                    <div class="payment-method__img flex items-center"
+                         x-bind:class="{'active':payment_method==1}"
+                         @click="payment_method=1">
+                        <div>
+                            <img src="img/mastercard-seeklogo.com%201.png"
+                                 alt="">
+                        </div>
+                        <div>
+                            <img src="img/Visa_Inc._logo%201.png"
+                                 alt=""
+                                 class="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <label class="switcher radio ">
+                        <input type="radio" class="radio" name="payment_method"
+                               x-model="payment_method"
+                               value="2">
+                        <span class="slider radio round"></span>
+                    </label>
+                    <div class=" payment-method__img"
+                         x-bind:class="{'active':payment_method===2}"
+                         @click="payment_method=2">
+                        <img src="img/PayPal%201.png"
+                             alt="">
+                    </div>
+                </div>
+            </div>
+
+
+            <div x-show="showBillingInfo">
+                <p class=" gr"> Billing information</p>
+                <div class="flex flex-col lg:flex-row justify-between lg:mt-12">
+                    <div class="input-wrapper">
+                        <input type="hidden" name="country_billing" x-model="country_billing">
+                        <input type="text"
+                               class="input"
+                               name="country_billing"
+                               x-bind:placeholder="validation.country_billing.msg?validation.country_billing.msg:'Country'"
+                               x-bind:class="{'placeholder-red-400': validation.country_billing.error } "
+                               x-model="country_billing">
+                        <span class="text-red-400 mt-2" x-text="validation.country_billing.msg">
+                        </span>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="hidden" name="city_billing" x-model="city_billing">
+                        <input type="text"
+                               class="input"
+                               name="city_billing"
+                               x-bind:placeholder="validation.city_billing.msg?validation.city_billing.msg:'City'"
+                               x-bind:class="{'placeholder-red-400': validation.city_billing.error } "
+                               x-model="city_billing">
+                        <span class="text-red-400 mt-2" x-text="validation.city_billing.msg">
+                        </span>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="hidden" name="zip_billing" x-model="zip_billing">
+                        <input type="text"
+                               class="input"
+                               name="zip_billing"
+                               x-bind:placeholder="validation.zip_billing.msg?validation.zip_billing.msg:'ZIP / Postcode'"
+                               x-bind:class="{'placeholder-red-400': validation.zip_billing.error } "
+                               x-model="zip_billing">
+                        <span class="text-red-400 mt-2" x-text="validation.zip_billing.msg">
+                        </span>
+                    </div>
+                </div>
+                <div class="flex flex-col lg:flex-row justify-between lg:mt-12">
+                    <div class="input-wrapper">
+                        <input type="hidden" name="address1_billing" x-model="address1_billing">
+                        <input type="text"
+                               class="input"
+                               name="address1_billing"
+                               x-bind:placeholder="validation.address1_billing.msg?validation.address1_billing.msg:'Address line 1'"
+                               x-bind:class="{'placeholder-red-400': validation.address1_billing.error } "
+                               x-model="address1_billing">
+                        <span class="text-red-400 mt-2" x-text="validation.address1_billing.msg">
+                        </span>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="hidden" name="address2_billing" x-model="address2_billing">
+                        <input type="text"
+                               class="input"
+                               name="address2_billing"
+                               x-bind:placeholder="validation.address2_billing.msg?validation.address2_billing.msg:'Address line 2'"
+                               x-bind:class="{'placeholder-red-400': validation.address2_billing.error } "
+                               x-model="address2_billing">
+                        <span class="text-red-400 mt-2" x-text="validation.address2_billing.msg">
+                        </span>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" class="input opacity-0">
+                    </div>
+                </div>
+            </div>
+
+            <button @click.prevent="submitData()" class="button button-next w-full flex justify-center" data-id="2"
+            >
+                Next
+            </button>
+        </div>
 
         <div x-show="opened==3" class="form-box form-box-3 ">
             <h2>Thank you for your purchase!</h2>
             <h4>We will contact you as soon as possible.</h4>
 
-            <div class="flex flex-col items-center">
+            <div class="hidden lg:flex flex-col items-center">
                 <div class="panel__img first">
                     <img src="img/white-panel.png" alt="">
                 </div>
@@ -509,8 +726,23 @@
                     <img src="img/black-panel.png" alt="">
                 </div>
             </div>
+            <div class="lg:hidden flex justify-center">
+                <div class="mobile-img black">
+                    <img src="img/R12B 1.png" alt="">
+                </div>
+                <div class="mobile-img white">
+                    <img src="img/R12 1.png" alt="">
+                </div>
+            </div>
+
             <div class="buttons flex justify-center items-center">
-                <button @click.prevent="opened=1;blackQuantity=1;whiteQuantity=1;" href="#" class="button button-next"
+                <button @click.prevent="opened=1;blackQuantity=1;whiteQuantity=1;"
+                        class="button button-next hidden lg:inline-block"
+                        data-id="2">
+                    Another order
+                </button>
+                <button @click.prevent="opened=1;blackQuantity=1;whiteQuantity=1;"
+                        class="button button-next  w-full flex justify-center lg:hidden"
                         data-id="2">
                     Another order
                 </button>
@@ -556,9 +788,13 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
 
 <script>
 
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 300
+    })
 
     function faq() {
         return {
@@ -586,7 +822,7 @@
             whiteQuantity: 1,
             whitePrice: 100,
             blackPrice: 200,
-            showBillingInfo: false,
+            showBillingInfo: true,
             full_name: '',
             phone: '',
             email: '',
@@ -601,7 +837,7 @@
             city_billing: '',
             zip_billing: '',
             promocode: '',
-            address_shipping_same: 0,
+            address_shipping_same: 1,
             payment_method: 1,
             has_errors: false,
             validation: {
@@ -724,7 +960,7 @@
                         }
                     }
 
-                    if (key == 'required_if_billing') {
+                    if (key == 'required_if_billing' && (window.screen.width >= 1024 || this.opened == 4)) {
                         if (this[field].trim().length == 0 && this.address_shipping_same == 1) {
                             this.validation[field].error = true;
                             this.validation[field].msg = `${title} is required`;
@@ -735,13 +971,16 @@
                     }
 
 
-                    // if (key == 'email') {
-                    //     const rgx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                    //     if (rgx.test(this[field])) {
-                    //         this.validation[field].error = true;
-                    //         this.validation[field].msg = `${title} is not valid email address`;
-                    //     }
-                    // }
+                    if (key == 'email') {
+                        const rgx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                        if (!rgx.test(this[field])) {
+                            this.validation[field].error = true;
+                            this.validation[field].msg = `${title} is not valid email address`;
+                        } else {
+                            this.validation[field].error = false;
+                            this.validation[field].msg = ``;
+                        }
+                    }
                 }
 
                 for (const field in this.validation) {
@@ -750,6 +989,21 @@
                     } else {
                         this.has_errors = false;
                     }
+                }
+            },
+            nextOnMobile() {
+                for (const field in this.validation) {
+                    this.validate(field);
+                }
+
+                for (const field in this.validation) {
+                    if (this.validation[field].error == true) {
+                        this.has_errors = true;
+                    }
+                }
+
+                if (!this.has_errors) {
+                    this.opened = 4;
                 }
             },
             submitData() {
@@ -763,7 +1017,6 @@
                     }
                 }
 
-                console.log(this.has_errors);
                 if (!this.has_errors) {
                     fetch('/contact', {
                         method: 'POST',
@@ -771,7 +1024,7 @@
                         body: JSON.stringify(this.formData)
                     })
                         .then(() => {
-                            this.showBillingInfo = false
+                            this.showBillingInfo = true
                             this.full_name = ''
                             this.phone = '';
                             this.email = '';
@@ -797,6 +1050,15 @@
 
                 }
             }
+        }
+    }
+
+    function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "flex") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "flex";
         }
     }
 </script>
