@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap"
           rel="stylesheet">
@@ -11,7 +12,7 @@
 </head>
 <body>
 
-<div class="nav flex justify-between items-center">
+<div class="nav hidden lg:flex  justify-between items-center">
     <div class="nav-logo">
         <a href=""> <img src="img/logo.png" alt=""></a>
     </div>
@@ -24,28 +25,39 @@
     </div>
 </div>
 
-<header class="header flex">
-    <div class="header-content w-2/5">
-        <h1>Ultra-slim Infrared Heating Panel for Home and Office</h1>
-        <p>The search for your perfect heater is over – our EU-certified Premium Heater keeps you cozy and warm safely
-            and
-            efficiently. Suitable for any space, including bathrooms, Premium Heater does only what it was made to
-            do.
-        </p>
-        <a href="#" class="border-2 rounded-full border-white py-2 px-6 my-2">
-            Get it now!
-        </a>
-    </div>
-    <div class="header-bg-1">
-    </div>
-    <div class="header-bg-2">
+<header class="header ">
+    <div class="headerr flex flex-col lg:flex-row">
+        <div class="header-content w-full lg:w-3/5">
+            <h1>Ultra-slim Infrared Heating Panel for Home and Office</h1>
+            <p>The search for your perfect heater is over – our EU-certified Premium Heater keeps you cozy and warm
+                safely
+                and
+                efficiently. Suitable for any space, including bathrooms, Premium Heater does only what it was made to
+                do.
+            </p>
+            <a href="#" class="hidden lg:inline-block border-2 rounded-full border-white py-2 px-6 my-2">
+                Get it now!
+            </a>
+            <a href="" class="lg:hidden button w-full text-center mt-6">Get it now!</a>
+        </div>
+        <div class="header-bg-1 hidden lg:block">
+        </div>
+        <div class="header-bg-2 hidden lg:block">
+        </div>
+        <div class="mobile-img lg:hidden flex">
+            <div class="mobile-img__header-bg-1">
+            </div>
+            <div class="mobile-img__header-bg-2">
+            </div>
+        </div>
     </div>
 </header>
 
 <section class="interiors" id="interiors">
     <div class="interiors-content">
-        <h2>Interiors</h2>
-        <p>Perfect for every interiour: large office openspaces, houses/apartments and bathrooms.</p>
+        <h2 class="text-center">Interiors</h2>
+        <p class="text-center">Perfect for every interiour: large office openspaces, houses/apartments and
+            bathrooms.</p>
         <div class="features flex justify-around items-center">
             <div>
                 <img src="img/image%2010.png" alt="">
@@ -64,33 +76,44 @@
 </section>
 
 <section class="economy ">
-    <div class="flex">
-        <div class="economy-content">
-            <h2>Less energy - same heat</h2>
-            <p>We use a carbon-based innovative nanotech heating panel. That means way less energy consumption while
-                producing the same amount of heat just like other types of heaters.</p>
+    <div class="economyy">
+        <div class="flex flex-col lg:flex-row">
+            <div class="economy-content">
+                <h2>Less energy - same heat</h2>
+                <p>We use a carbon-based innovative nanotech heating panel. That means way less energy consumption while
+                    producing the same amount of heat just like other types of heaters.</p>
+            </div>
+            <div class="img-md hidden lg:block">
+                <img src="img/G222%201.png" alt="">
+            </div>
+            <div class="mobile__img lg:hidden">
+                <img src="img/G222(1).png" alt="">
+            </div>
         </div>
-        <div class="img-md">
-            <img src="img/G222%201.png" alt="">
-        </div>
+        <div class="watermark hidden lg:block">Economy</div>
     </div>
-    <div class="watermark">Economy</div>
 </section>
 
 <section class="gentle">
     <h2>Gentle heat</h2>
     <p>In a way, it works like the Sun: the heater's infrared rays evenly and gently heat up space and the things in it,
         keeping you warm even after you turn it off. This method is perfectly safe both for humans and pets.</p>
+    <div class="lg:hidden flex justify-between my-8">
+        <h3>Regular
+            heater</h3>
+        <h3 class="text-right">Regular
+            heater</h3>
+    </div>
     <div class="gentle-change-line flex justify-between">
-        <div class="regular-heater w-1/5">
+        <div class="regular-heater hidden lg:block w-1/4">
             <h3>Regular
                 heater</h3>
             <p>heats and dries out air, warm air wents upside leaving a floor cold</p>
         </div>
-        <div class="gentle-img text-center">
+        <div class="gentle-img text-center lg:mx-8">
             <img src="img/Group%2057.png" alt="" class="w-100">
         </div>
-        <div class="premium-heater text-right w-1/5">
+        <div class="premium-heater text-right hidden lg:block w-1/4">
             <h3>Premium
                 heater</h3>
             <p>doesn't dry out air, evenly warms all objects in the room, including floor and walls</p>
@@ -99,44 +122,46 @@
 </section>
 
 <section class="no-worries">
-    <h2>No more worries for</h2>
-    <div class="features">
-        <div class="flex items-center">
-            <span>x</span>
-            <p>Dry air</p>
-        </div>
-        <div class="flex items-center">
-            <span>x</span>
-            <p>Dust</p>
-        </div>
-        <div class="flex items-center">
-            <span>x</span>
-            <p>Noises</p>
-        </div>
-        <div class="flex items-center">
-            <span>x</span>
-            <p>Odd smell</p>
+    <div class="no-worreiss">
+        <h2>No more worries for</h2>
+        <div class="features">
+            <div class="flex items-center justify-center lg:justify-start">
+                <span class="mr-2">x</span>
+                <p>Dry air</p>
+            </div>
+            <div class="flex items-center justify-center lg:justify-start">
+                <span class="mr-2">x</span>
+                <p>Dust</p>
+            </div>
+            <div class="flex items-center justify-center lg:justify-start">
+                <span class="mr-2">x</span>
+                <p>Noises</p>
+            </div>
+            <div class="flex items-center justify-center lg:justify-start">
+                <span class="mr-2">x</span>
+                <p>Odd smell</p>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="specifications" id="specifications">
-    <div class="features m-auto w-4/5 flex justify-between">
-        <div class="feature__item mx-2">
+    <div class="features m-auto w-4/5 flex flex-col lg:flex-row justify-between">
+        <div class="feature__item mb-6 lg:mb-0 lg:mx-2">
             <div class="flex flex-col">
                 <img src="img/eu%201.png" alt="">
                 <h3>Water resistant</h3>
                 <p>With an IP44 level of security you can safely use it in your bathroom.</p>
             </div>
         </div>
-        <div class="feature__item mx-2">
+        <div class="feature__item my-6 lg:my-0 lg:mx-2">
             <div class="flex flex-col">
                 <img src="img/eu%201.png" alt="">
                 <h3>Made in EU</h3>
                 <p>Our factory is located in Poland and we use high-quality materials only.</p>
             </div>
         </div>
-        <div class="feature__item mx-2">
+        <div class="feature__item my-6 lg:my-0 lg:mx-2">
             <div class="flex flex-col">
                 <img src="img/Group%2018.png" alt="">
                 <h3>Ultra-slim glass panel</h3>
@@ -198,7 +223,57 @@
             <h2>Ultra-slim Infrared Heating Panel</h2>
             <h4>Model: SKUGW001</h4>
 
-            <div class="white-panel flex flex-between items-center">
+            <div class="mobile lg:hidden">
+                <div class="flex flex-col align-center">
+                    <div class="panel-img mt-24 mb-4">
+                        <img src="img/white-panel.png" alt="">
+                    </div>
+                    <p class="mb-4">White Panel</p>
+                    <div class=" counter flex items-center justify-around w-full">
+                        <div class="switch minus white-switch"
+                             @click="(blackQuantity!=0 && whiteQuantity>0)?whiteQuantity--:false">
+                            -
+                        </div>
+                        <input disabled type="number" class="w-4/5" min="1" value="1" x-model="whiteQuantity">
+                        <div class="switch plus white-switch" @click="whiteQuantity++">+</div>
+                    </div>
+
+                    <div class="panel-img mt-24 mb-4">
+                        <img src="img/black-panel.png" alt="">
+                    </div>
+                    <p class="mb-4">Black Panel</p>
+                    <div class=" counter flex items-center justify-around">
+                        <div class="switch minus white-switch"
+                             @click="(whiteQuantity!=0 && blackQuantity>0)?blackQuantity--:false">
+                            -
+                        </div>
+                        <input disabled type="number" class="w-4/5" min="1" value="1" x-model="blackQuantity">
+                        <div class="switch plus white-switch" @click="blackQuantity++">+</div>
+                    </div>
+
+                    <div class="buttons">
+                        <div class="mb-4">
+                            (x<span x-text="whiteQuantity"></span>)
+                            White panel
+                        </div>
+                        <div class="mb-4">
+                            (x<span x-text="blackQuantity"></span>)
+                            Black panel
+                        </div>
+                        <div class="mb-24 total">
+                            Total: <span
+                                x-text="whitePrice*whiteQuantity + blackPrice*blackQuantity"></span>
+                        </div>
+                        <a @click.prevent="opened=2" href="#" class="button button-next w-full flex justify-center"
+                           data-id="1">
+                            Order
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="white-panel hidden lg:flex flex-between items-center">
                 <div class="panel-img">
                     <img src="img/white-panel.png" alt="">
                 </div>
@@ -215,7 +290,7 @@
                 </div>
             </div>
 
-            <div class="black-panel flex flex-between items-center">
+            <div class="black-panel hidden lg:flex flex-between items-center">
                 <div class="counter-wrapper flex flex-col items-center w-2/5">
                     <p>Black Panel</p>
                     <div class=" counter flex items-center justify-around">
@@ -232,7 +307,7 @@
                 </div>
             </div>
 
-            <div class="buttons flex items-center justify-between">
+            <div class="buttons hidden lg:flex items-center justify-between ">
                 <div class="flex items-center justify-between w-2/5">
                     <div class="flex items-center justify-around w-4/5">
                         <div>
@@ -384,7 +459,7 @@
                                    value="1" checked>
                             <span class="slider radio round"></span>
                         </label>
-                        <div class="ml-3 payment-method__img flex" @click="$refs.visa.checked=true">
+                        <div class="ml-6 payment-method__img flex" @click="$refs.visa.checked=true">
                             <img src="img/mastercard-seeklogo.com%201.png"
                                  alt="">
                             <img src="img/Visa_Inc._logo%201.png"
@@ -401,7 +476,7 @@
                                    value="2">
                             <span class="slider radio round"></span>
                         </label>
-                        <div class="ml-3 payment-method__img" @click="$refs.paypal.checked=true">
+                        <div class="ml-6 payment-method__img" @click="$refs.paypal.checked=true">
                             <img src="img/PayPal%201.png"
                                  alt="">
                         </div>
@@ -446,18 +521,18 @@
 </section>
 
 
-<section class="faq flex justify-around" x-data="faq()" id="faq">
-    <h2 class="">Frequently
+<section class="faq flex flex-col lg:flex-row lg:justify-around" x-data="faq()" id="faq">
+    <h2 class="text-center lg:text-left">Frequently
         Asked Questions</h2>
     <div class="questions">
         <template x-for="(question,index) in questions" :key="index">
-            <div class="questions-item mb-4">
+            <div class="questions-item mb-4" x-on:click="questions[index].visible = !questions[index].visible"
+                 x-bind:class="{'opened':questions[index].visible}">
                 <div class="questions-item__title flex ">
                     <p x-text="question.question" class="questions-item__title-question">
                     </p>
-                    <div class="open-wrapper">
+                    <div class="open-wrapper hidden lg:block">
                         <div class="open"
-                             x-on:click="questions[index].visible = !questions[index].visible"
                              x-bind:class="{'opened':questions[index].visible}"
                         ></div>
                     </div>
@@ -469,11 +544,11 @@
 
 </section>
 
-<footer class="footer flex justify-between">
+<footer class="footer flex flex-col lg:flex-row justify-between text-center lg:text-left">
     <div class="copyrigt">
         © All Right Reserved. Premium Heater 2020.
     </div>
-    <div class="links flex justify-between w-2/5">
+    <div class="links flex justify-around lg:justify-between w-full lg:w-2/5">
         <a href="#" class="">Terms of use</a>
         <a href="#" class="">Privacy Policy</a>
     </div>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9ef299e4-f331-4569-8ca2-a1dbb1835d60" name="Default Changelist" comment="cc">
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="SCSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1loqPudYP2zUOg0iWxSEChattge" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/css" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ef299e4-f331-4569-8ca2-a1dbb1835d60" name="Default Changelist" comment="" />
+      <created>1608273771548</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608273771548</updated>
+      <workItem from="1608273772744" duration="1753000" />
+      <workItem from="1608326932289" duration="34485000" />
+    </task>
+    <task id="LOCAL-00001" summary="cc">
+      <created>1608466055793</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608466055793</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="cc" />
+    <option name="LAST_COMMIT_MESSAGE" value="cc" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="606" y="234" width="215" height="333" key="#File_Watchers" timestamp="1608274562506">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="606" y="234" width="215" height="333" key="#File_Watchers/72.27.1294.741@72.27.1294.741" timestamp="1608274562506" />
+    <state x="354" y="175" width="719" height="488" key="EditFileWatcherDialog" timestamp="1608274558788">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="354" y="175" width="719" height="488" key="EditFileWatcherDialog/72.27.1294.741@72.27.1294.741" timestamp="1608274558788" />
+    <state x="496" y="159" width="424" height="491" key="FileChooserDialogImpl" timestamp="1608274453407">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="496" y="159" width="424" height="491" key="FileChooserDialogImpl/72.27.1294.741@72.27.1294.741" timestamp="1608274453407" />
+    <state x="580" y="297" width="277" height="207" key="Github.ShareDialog" timestamp="1608464836266">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="580" y="297" width="277" height="207" key="Github.ShareDialog/72.27.1294.741@72.27.1294.741" timestamp="1608464836266" />
+    <state x="502" y="77" width="424" height="647" key="Github.UntrackedFilesDialog" timestamp="1608464857560">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="502" y="77" width="424" height="647" key="Github.UntrackedFilesDialog/72.27.1294.741@72.27.1294.741" timestamp="1608464857560" />
+    <state x="314" y="133" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1608466090871">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="314" y="133" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1294.741@72.27.1294.741" timestamp="1608466090871" />
+    <state x="500" y="312" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608521699494">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="500" y="312" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/72.27.1294.741@72.27.1294.741" timestamp="1608521699494" />
+    <state x="383" y="174" key="run.anything.popup" timestamp="1608465171498">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="383" y="174" key="run.anything.popup/72.27.1294.741@72.27.1294.741" timestamp="1608465171498" />
+  </component>
+</project>
