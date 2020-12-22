@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/yanarowana123/bb#readme",
   "dependencies": {
+    "@glidejs/glide": "^3.4.1",
     "node-sass": "^5.0.0"
   }
 }

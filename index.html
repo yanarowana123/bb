@@ -9,6 +9,7 @@
           rel="stylesheet">
     <link rel="stylesheet" href="css/tailwind.min.css">
     <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/glide.core.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -31,12 +32,12 @@
         <a href="javascript:void(0);" class="icon nav-item" onclick="myFunction()" style="width: 30%">
             <i class="fas fa-bars"></i>
         </a>
-        <a href="#home" class="active text-center flex justify-center nav-item" style="width: 30%">
+        <a href="#form__wrapper" class="active text-center flex justify-center nav-item" style="width: 30%">
             <img src="img/logo.png" alt="">
         </a>
         <a href="#form__wrapper" class="button button-nav nav-item flex justify-center" style="width: 30%">Buy</a>
     </div>
-    <div id="myLinks"class="flex-col">
+    <div id="myLinks" class="flex-col">
         <a href="#interiors">Interiors</a>
         <a href="#specifications">Specifications</a>
         <a href="#gallery">Gallery</a>
@@ -54,10 +55,10 @@
                 efficiently. Suitable for any space, including bathrooms, Premium Heater does only what it was made to
                 do.
             </p>
-            <a href="#" class="hidden lg:inline-block border-2 rounded-full border-white py-4 px-24 my-16">
+            <a href="#form__wrapper" class="hidden lg:inline-block border-2 rounded-full border-white py-4 px-24 my-16">
                 Get it now!
             </a>
-            <a href="" class="lg:hidden button w-full text-center mt-6">Get it now!</a>
+            <a href="#form__wrapper" class="lg:hidden button w-full text-center mt-6">Get it now!</a>
         </div>
         <div class="header-bg-1 hidden lg:block">
         </div>
@@ -72,23 +73,26 @@
     </div>
 </header>
 
-<section class="interiors" id="interiors">
+<section class="interiors glide" id="interiors">
     <div class="interiors-content">
-        <h2 class="text-center">Interiors</h2>
-        <p class="text-center">Perfect for every interiour: large office openspaces, houses/apartments and
+        <h2 class="text-center lg:text-left">Interiors</h2>
+        <p class="text-center lg:text-left my-8">Perfect for every interiour: large office openspaces, houses/apartments
+            and
             bathrooms.</p>
-        <div class="features flex justify-around items-center">
-            <div>
-                <img src="img/image%2010.png" alt="">
-                <p>Office</p>
-            </div>
-            <div>
-                <img src="img/image%2010.png" alt="">
-                <p>Office</p>
-            </div>
-            <div>
-                <img src="img/image%209.png" alt="">
-                <p>Office</p>
+        <div class=" glide__track" data-glide-el="track">
+            <div class="features flex justify-around items-center glide__slides">
+                <div class="">
+                    <img src="img/image%2010.png" alt="">
+                    <p>Office</p>
+                </div>
+                <div class="">
+                    <img src="img/image%2010.png" alt="">
+                    <p>Home</p>
+                </div>
+                <div class="">
+                    <img src="img/image%209.png" alt="">
+                    <p>Bathroom</p>
+                </div>
             </div>
         </div>
     </div>
@@ -99,7 +103,8 @@
         <div class="flex flex-col lg:flex-row">
             <div class="economy-content">
                 <h2>Less energy - same heat</h2>
-                <p>We use a carbon-based innovative nanotech heating panel. That means way less energy consumption while
+                <p class="my-6">We use a carbon-based innovative nanotech heating panel. That means way less energy
+                    consumption while
                     producing the same amount of heat just like other types of heaters.</p>
             </div>
             <div class="img-md hidden lg:block">
@@ -115,7 +120,8 @@
 
 <section class="gentle">
     <h2>Gentle heat</h2>
-    <p>In a way, it works like the Sun: the heater's infrared rays evenly and gently heat up space and the things in it,
+    <p class="my-6">In a way, it works like the Sun: the heater's infrared rays evenly and gently heat up space and the
+        things in it,
         keeping you warm even after you turn it off. This method is perfectly safe both for humans and pets.</p>
     <div class="lg:hidden flex justify-between my-8">
         <h3>Regular
@@ -209,16 +215,30 @@
 </section>
 
 
-<section class="gallery" id="gallery">
-    <div class="grid-container">
-        <div class="first"><img src="img/cozy-living-room-with-sofa-PU5CRHH.png" alt=""></div>
-        <div class="second"><img src="img/I5.png" alt=""></div>
-        <div class="third"><img src="img/I1.png" alt=""></div>
-        <div class="fourth"><img src="img/I4.png" alt=""></div>
-        <div class="fifth"><img src="img/I2.png" alt=""></div>
-        <div class="sixth"><img src="img/I8.png" alt=""></div>
+<!--<section class="gallery glide" id="gallery">-->
+<!--    <div class="glide__track" data-glide-el="track">-->
+<!--        <div class="grid-container glide__slides">-->
+<!--            <div class="first glide__slide"><img src="img/cozy-living-room-with-sofa-PU5CRHH.png" alt=""></div>-->
+<!--            <div class="second glide__slide"><img src="img/I5.png" alt=""></div>-->
+<!--            <div class="third glide__slide"><img src="img/I1.png" alt=""></div>-->
+<!--            <div class="fourth glide__slide"><img src="img/I4.png" alt=""></div>-->
+<!--            <div class="fifth glide__slide"><img src="img/I2.png" alt=""></div>-->
+<!--            <div class="sixth glide__slide"><img src="img/I8.png" alt=""></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
-    </div>
+
+<section class="gallery glide" id="gallery">
+    <div class="glide__track" data-glide-el="track">
+        <div class="grid-container glide__slides">
+            <div class="first glide__slide"><img src="img/cozy-living-room-with-sofa-PU5CRHH.png" alt=""></div>
+            <div class="second glide__slide"><img src="img/I5.png" alt=""></div>
+            <div class="third glide__slide"><img src="img/I1.png" alt=""></div>
+            <div class="fourth glide__slide"><img src="img/I4.png" alt=""></div>
+            <div class="fifth glide__slide"><img src="img/I2.png" alt=""></div>
+            <div class="sixth glide__slide"><img src="img/I8.png" alt=""></div>
+        </div>
 </section>
 
 <section class="form-section" id="form__wrapper">
@@ -371,6 +391,7 @@
                     <div class="input-wrapper">
                         <input type="text"
                                class="input"
+                               id="phone-input"
                                name="phone"
                                x-bind:placeholder="validation.phone.msg?validation.phone.msg:'Phone'"
                                x-bind:class="{'placeholder-red-400': validation.phone.error } "
@@ -754,7 +775,7 @@
 
 
 <section class="faq flex flex-col lg:flex-row lg:justify-around" x-data="faq()" id="faq">
-    <h2 class="text-center lg:text-left">Frequently
+    <h2 class="text-center lg:text-left mb-4 lg:m-0">Frequently
         Asked Questions</h2>
     <div class="questions">
         <template x-for="(question,index) in questions" :key="index">
@@ -769,7 +790,8 @@
                         ></div>
                     </div>
                 </div>
-                <p class="questions-item__text" x-show="questions[index].visible" x-text="questions[index].answer"></p>
+                <p class="questions-item__text mt-4" x-show="questions[index].visible"
+                   x-text="questions[index].answer"></p>
             </div>
         </template>
     </div>
@@ -780,7 +802,7 @@
     <div class="copyrigt">
         © All Right Reserved. Premium Heater 2020.
     </div>
-    <div class="links flex justify-around lg:justify-between w-full lg:w-2/5">
+    <div class="links flex justify-around lg:justify-between w-full lg:w-2/5 mt-4 lg:m-0">
         <a href="#" class="">Terms of use</a>
         <a href="#" class="">Privacy Policy</a>
     </div>
@@ -789,8 +811,29 @@
 
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+<script src="css/glide.min.js"></script>
+<script src="css/mask.js"></script>
 
 <script>
+
+    var phoneMask = IMask(
+        document.getElementById('phone-input'), {
+            mask: '+{7}(000)000-00-00'
+        });
+
+    if (window.screen.width < 1024) {
+        new Glide('.interiors', {
+            perView: 1.5,
+            gap: 0,
+            type: 'carousel'
+        }).mount();
+        new Glide('.gallery', {
+            perView: 1.2,
+            gap: 0,
+            type: 'carousel'
+        }).mount();
+    }
+
 
     var scroll = new SmoothScroll('a[href*="#"]', {
         speed: 300

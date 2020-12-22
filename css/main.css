@@ -128,11 +128,18 @@ body {
 .interiors .features div {
   padding: 10px;
 }
-.interiors .features p {
-  color: #5A5F73;
+.interiors .features div p {
+  color: #ACB0C1;
   font-size: 2.4rem;
   line-height: 128.19%;
   font-weight: 500;
+}
+.interiors .features div:hover img {
+  border: 1px solid #F9B133;
+  border-radius: 20px;
+}
+.interiors .features div:hover p {
+  color: #5A5F73;
 }
 
 .economy {
@@ -241,7 +248,7 @@ body {
   color: #7D839B;
 }
 .specifications-content {
-  font-size: 4.8rem;
+  font-size: 3.6rem;
   color: #ACB0C1;
 }
 .specifications-content h4 {
@@ -614,8 +621,8 @@ body {
     padding-bottom: 70px;
   }
 
-  .gallery {
-    display: none;
+  .gallery .grid-container {
+    display: flex;
   }
 
   .form-section {
@@ -837,11 +844,17 @@ body {
     font-weight: 300;
   }
 
+  .nav-mobile {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
   .nav-mobile .topnav {
     padding: 0 15px;
     overflow: hidden;
     background-color: #282B34;
     position: relative;
+    max-height: 50px;
   }
   .nav-mobile #myLinks {
     display: none;
