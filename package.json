@@ -18,6 +18,7 @@
   "homepage": "https://github.com/yanarowana123/bb#readme",
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
+    "img-slider": "^2.2.0",
     "node-sass": "^5.0.0"
   }
 }

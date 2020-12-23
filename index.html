@@ -111,7 +111,7 @@
                 <img src="img/G222%201.png" alt="">
             </div>
             <div class="mobile__img flex justify-center lg:hidden">
-                <img src="img/G222(1).png" alt="">
+                <img src="img/G222%201.png" alt="">
             </div>
         </div>
         <div class="watermark hidden lg:block">Economy</div>
@@ -135,8 +135,12 @@
                 heater</h3>
             <p>heats and dries out air, warm air wents upside leaving a floor cold</p>
         </div>
-        <div class="gentle-img text-center lg:mx-8">
-            <img src="img/Group%2057.png" alt="" class="w-full">
+        <div class="gentle-img text-center lg:mx-8" style="position: relative">
+            <!--            <img src="img/Group%2057.png" alt="" class="w-full">-->
+            <div id="example">
+                <img data-caption="Before" src="img/image%2015.png" alt="image One">
+                <img data-caption="After" src="img/image%2017.png" alt="image Two">
+            </div>
         </div>
         <div class="premium-heater text-right hidden lg:block w-1/4">
             <h3>Premium
@@ -809,12 +813,25 @@
 </footer>
 
 
+<link rel="stylesheet" href="css/image-compare-viewer.min.css">
+<script src="css/image-compare-viewer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
 <script src="css/glide.min.js"></script>
 <script src="css/mask.js"></script>
 
 <script>
+
+    const element = document.getElementById("example");
+    const myViewer = new ImageCompare(element, {
+        smoothing: true,
+        smoothingAmount: 100,
+        controlColor: "#ffffff",
+        controlShadow: true,
+        addCircle: true,
+        addCircleBlur: true
+    }).mount();
+
 
     var phoneMask = IMask(
         document.getElementById('phone-input'), {
@@ -1104,6 +1121,8 @@
             x.style.display = "flex";
         }
     }
+
+
 </script>
 
 </body>
