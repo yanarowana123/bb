@@ -138,10 +138,9 @@
                 <p>heats and dries out air, warm air wents upside leaving a floor cold</p>
             </div>
             <div class="gentle-img text-center lg:mx-8" style="position: relative">
-                <!--            <img src="img/Group%2057.png" alt="" class="w-full">-->
                 <div id="example">
                     <img data-caption="Before" src="img/image%2015.png" alt="image One">
-                    <img data-caption="After" src="img/image%2017.png" alt="image Two">
+                    <img data-caption="After" src="img/premimumm.png" alt="image Two">
                 </div>
             </div>
             <div class="premium-heater text-right hidden lg:block w-1/4">
@@ -181,9 +180,9 @@
     <div class="specificationss">
         <div class="features m-auto  flex flex-col lg:flex-row justify-between">
             <div class="feature__item mb-6 lg:mb-0 lg:mx-2">
-                <div class="flex flex-col">
-                    <img src="img/eu%201.png" alt="" class="hidden lg:block large">
-                    <img src="img/Group%2042.png" alt="" class="lg:hidden mobile">
+                <div class="flex flex-col ">
+                    <img src="img/Group%2042(1).png" alt="" class="hidden lg:block large">
+                    <img src="img/Group%2042.png" alt="" class="lg:hidden dd">
                     <h3>Water resistant</h3>
                     <p>With an IP44 level of security you can safely use it in your bathroom.</p>
                 </div>
@@ -826,8 +825,8 @@
 <script src="css/mask.js"></script>
 
 <script>
-
     const element = document.getElementById("example");
+
     const myViewer = new ImageCompare(element, {
         smoothing: true,
         smoothingAmount: 100,
@@ -836,6 +835,27 @@
         addCircle: true,
         addCircleBlur: true
     }).mount();
+
+    // document.querySelector('.icv__circle').on('mousedown', alert('f'));
+    let timer = null;
+
+    document.querySelector('.icv__circle').addEventListener("mousedown", function (evt) {
+        // Start a timer that fires a function at 50 millisecond intervals
+        alert(evt.pageY);
+        evt.pageY = evt.pageY - 300;
+        alert(evt.pageY);
+        timer = setInterval(function () {
+            element.dispatchEvent(new Event('mousedown'));
+        }, 1);
+    });
+
+    document.querySelector('.icv__circle').addEventListener("mousemove", function (evt) {
+        // Start a timer that fires a function at 50 millisecond intervals
+        evt.pageY = evt.pageY - 300;
+        timer = setInterval(function () {
+            element.dispatchEvent(new Event('mousemove'));
+        }, 1);
+    });
 
 
     var phoneMask = IMask(
@@ -870,7 +890,17 @@
                     visible: true
                 },
                 {
-                    question: '2?',
+                    question: 'Are your products safe and have they passed the necessary tests?',
+                    answer: 2,
+                    visible: false
+                },
+                {
+                    question: 'Do you have heating panels with a built-in thermostat in your offer?',
+                    answer: 2,
+                    visible: false
+                },
+                {
+                    question: 'Will 500-600 w be enough to heat a room of 10-15 m2?',
                     answer: 2,
                     visible: false
                 },

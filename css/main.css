@@ -320,6 +320,9 @@ input[type=range]::-webkit-slider-thumb {
   transform: scale(1.5);
   display: block;
 }
+.specifications .features .feature__item:hover .dd {
+  display: block;
+}
 .specifications-content {
   font-size: 3.6rem;
   color: #ACB0C1;
