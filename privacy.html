@@ -7,7 +7,7 @@
           rel="stylesheet">
     <title>Privacy policy</title>
     <link rel="stylesheet" href="css/tailwind.min.css">
-
+    <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
 
 </head>
@@ -37,12 +37,42 @@
         <a href="/#form__wrapper" class="button button-nav nav-item flex justify-center" style="width: 30%">Buy</a>
     </div>
     <div id="myLinks" class="flex-col">
-        <a href="/#interiors">Interiors</a>
-        <a href="/#specifications">Specifications</a>
-        <a href="/#gallery">Gallery</a>
-        <a href="/#faq">FAQ</a>
+        <a class="my-link" href="/#interiors">Interiors</a>
+        <a class="my-link" href="/#specifications">Specifications</a>
+        <a class="my-link" href="/#gallery">Gallery</a>
+        <a class="my-link" href="/#faq">FAQ</a>
     </div>
 </div>
+
+
+<header class="header ">
+    <div class="headerr flex flex-col lg:flex-row">
+        <div class="header-content w-full lg:w-3/5">
+            <h1>Ultra-slim Infrared Heating Panel for Home and Office</h1>
+            <p>The search for your perfect heater is over – our EU-certified Premium Heater keeps you cozy and warm
+                safely
+                and
+                efficiently. Suitable for any space, including bathrooms, Premium Heater does only what it was made to
+                do.
+            </p>
+            <a href="#/form__wrapper"
+               class="hidden lg:inline-block border-2 rounded-full border-white py-4 px-24 my-16">
+                Get it now!
+            </a>
+            <a href="#/form__wrapper" class="lg:hidden button w-full text-center mt-6">Get it now!</a>
+        </div>
+        <div class="header-bg-1 hidden lg:block">
+        </div>
+        <div class="header-bg-2 hidden lg:block">
+        </div>
+        <div class="mobile-img lg:hidden flex">
+            <div class="mobile-img__header-bg-1">
+            </div>
+            <div class="mobile-img__header-bg-2">
+            </div>
+        </div>
+    </div>
+</header>
 
 <section class="policy">
     <h1>Privacy policy</h1>
@@ -87,6 +117,16 @@
     </p>
 </section>
 
+<footer class="footer flex flex-col lg:flex-row justify-between text-center lg:text-left">
+    <div class="copyrigt">
+        © All Right Reserved. Premium Heater 2020.
+    </div>
+    <div class="links flex justify-around lg:justify-between w-full lg:w-2/5 mt-4 lg:m-0">
+        <a href="terms.html" class="">Terms of use</a>
+        <a href="privacy.html" class="">Privacy Policy</a>
+    </div>
+</footer>
+
 <script>
     function myFunction() {
         var x = document.getElementById("myLinks");
@@ -96,6 +136,10 @@
             x.style.display = "flex";
         }
     }
+
+    document.querySelectorAll('.my-link').click(function () {
+        myFunction();
+    })
 </script>
 </body>
 </html>

@@ -1317,6 +1317,7 @@ input[type="range"]::-webkit-slider-thumb {
 .policy {
   @extend %container;
   padding-top: 100px;
+  padding-bottom: 100px;
 
   p {
     margin: 2.5rem 0;

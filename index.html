@@ -38,10 +38,10 @@
         <a href="#form__wrapper" class="button button-nav nav-item flex justify-center" style="width: 30%">Buy</a>
     </div>
     <div id="myLinks" class="flex-col">
-        <a href="#interiors">Interiors</a>
-        <a href="#specifications">Specifications</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#faq">FAQ</a>
+        <a class="my-link" href="#interiors">Interiors</a>
+        <a class="my-link" href="#specifications">Specifications</a>
+        <a class="my-link" href="#gallery">Gallery</a>
+        <a class="my-link" href="#faq">FAQ</a>
     </div>
 </div>
 
@@ -1135,6 +1135,10 @@
             x.style.display = "flex";
         }
     }
+
+    document.querySelectorAll('.my-link').click(function () {
+        myFunction();
+    })
 
 
 </script>
