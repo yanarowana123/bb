@@ -811,7 +811,7 @@
         © All Right Reserved. Premium Heater 2020.
     </div>
     <div class="links flex justify-around lg:justify-between w-full lg:w-2/5 mt-4 lg:m-0">
-        <a href="#" class="">Terms of use</a>
+        <a href="terms.html" class="">Terms of use</a>
         <a href="privacy.html" class="">Privacy Policy</a>
     </div>
 </footer>
@@ -835,27 +835,6 @@
         addCircle: true,
         addCircleBlur: true
     }).mount();
-
-    // document.querySelector('.icv__circle').on('mousedown', alert('f'));
-    let timer = null;
-
-    document.querySelector('.icv__circle').addEventListener("mousedown", function (evt) {
-        // Start a timer that fires a function at 50 millisecond intervals
-        alert(evt.pageY);
-        evt.pageY = evt.pageY - 300;
-        alert(evt.pageY);
-        timer = setInterval(function () {
-            element.dispatchEvent(new Event('mousedown'));
-        }, 1);
-    });
-
-    document.querySelector('.icv__circle').addEventListener("mousemove", function (evt) {
-        // Start a timer that fires a function at 50 millisecond intervals
-        evt.pageY = evt.pageY - 300;
-        timer = setInterval(function () {
-            element.dispatchEvent(new Event('mousemove'));
-        }, 1);
-    });
 
 
     var phoneMask = IMask(
