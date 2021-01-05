@@ -28,8 +28,8 @@ a {
   display: inline-block;
 }
 
-.policy, .footer, .faq, .specifications .specificationss, .no-worries .no-worreiss, .gentle .gentlee, .economy .economyy, .interiors-content, .header .headerr, .nav {
-  max-width: 960px;
+.policy, .footer, .faq, .specifications .specificationss, .no-worries .no-worreiss, .gentle .gentlee, .economy .economyy, .header .headerr, .nav {
+  max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -71,14 +71,13 @@ body {
   font-weight: 500;
 }
 .nav .button.button-nav {
-  padding: 10px 50px;
+  padding: 10px 60px;
   background: #0CA074;
   border-radius: 86px;
 }
 
 .header {
   position: relative;
-  bottom: -20px;
   background: url("../img/Rectangle 11.png") center center/cover;
 }
 .header-content {
@@ -99,27 +98,32 @@ body {
   line-height: 153.69%;
 }
 .header-bg-1 {
-  width: 300px;
+  width: 350px;
   height: 700px;
   background: url("../img/R12 1.png");
   margin-top: 100px;
+  position: relative;
+  right: -70px;
 }
 .header-bg-2 {
-  width: 300px;
-  height: 800px;
+  width: 350px;
+  height: 750px;
   background: url("../img/R12B 1.png");
+  margin-top: 40px;
 }
 
 .interiors {
   background: url("../img/Rectangle 2.png") center no-repeat;
   background-size: contain;
   position: relative;
-  top: -80px;
+  top: -120px;
   color: #7D839B;
   font-weight: 500;
 }
 .interiors-content {
-  padding: 90px 50px;
+  padding: 90px 150px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 .interiors h2 {
   font-size: 3.6rem;
@@ -148,12 +152,12 @@ body {
 }
 
 .economy {
-  background: url("../img/Rectangle 11.png") center center/cover;
+  background: url("../img/Rectangle 11.png") center center/contain no-repeat;
   position: relative;
   top: -100px;
 }
 .economy-content {
-  width: 70%;
+  width: 50%;
   padding-top: 150px;
 }
 .economy-content h2 {
@@ -170,17 +174,16 @@ body {
 }
 .economy .img-md img {
   position: absolute;
-  top: -50px;
+  top: -158px;
   width: 100%;
-  left: 58%;
-  min-width: 800px;
-  max-width: 800px;
+  left: 55%;
+  max-width: 1000px;
   transform: translateX(-40%);
   z-index: 2;
 }
 .economy .watermark {
   font-weight: 900;
-  font-size: 23rem;
+  font-size: 26rem;
   line-height: 128.19%;
   text-align: center;
   color: rgba(19, 20, 22, 0.4);
@@ -190,7 +193,7 @@ body {
 }
 
 .gentle {
-  background: url("../img/Rectangle 11.png") center center/cover;
+  background: url("../img/Rectangle 11.png") center center/contain no-repeat;
   font-weight: 500;
 }
 .gentle .gentlee {
@@ -202,7 +205,8 @@ body {
 }
 .gentle p {
   font-weight: 300;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  line-height: 194%;
 }
 .gentle h3 {
   font-size: 2.4rem;
@@ -210,6 +214,9 @@ body {
 }
 .gentle-change-line {
   margin-top: 119px;
+}
+.gentle .regular-heater, .gentle .premium-heater {
+  width: 18%;
 }
 
 .image-slider {
@@ -279,7 +286,7 @@ input[type=range]::-webkit-slider-thumb {
   font-weight: 500;
   padding: 300px 0;
   margin: 100px 0 0;
-  background: url("../img/image 13.png") right 0 bottom no-repeat;
+  background: url("../img/image 13.png") center no-repeat;
 }
 .no-worries h2 {
   font-size: 3.6rem;
@@ -649,7 +656,7 @@ input[type=range]::-webkit-slider-thumb {
   color: #37ABFF;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .header {
     position: static;
   }
