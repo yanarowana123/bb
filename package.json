@@ -19,6 +19,7 @@
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
     "img-slider": "^2.2.0",
-    "node-sass": "^5.0.0"
+    "node-sass": "^5.0.0",
+    "remusjs": "^0.1.1"
   }
 }

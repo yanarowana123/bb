@@ -32,6 +32,12 @@ a {
   max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
+  @media (max-width: 1023px) {
+    padding: 0 30px;
+  }
+  @media (max-width: 400px) {
+    padding: 0 15px;
+  }
 }
 
 body {
@@ -84,7 +90,7 @@ body {
 
 .header {
   position: relative;
-  background: url("../img/Rectangle 11.png") center center/cover;
+  background: url("../img/Rectangle 11.png") center center/contain no-repeat;
 
   .headerr {
     @extend %container;
@@ -211,7 +217,7 @@ body {
     img {
       position: absolute;
       top: -158px;
-      width: 100%;
+      width: 70%;
       //left: 58%;
       left: 55%;
       //min-width: 1000px;
@@ -425,8 +431,9 @@ input[type="range"]::-webkit-slider-thumb {
     color: #ACB0C1;
 
     h4 {
-      font-weight: 500;
       font-size: 3.6rem;
+      font-weight: 500;
+      line-height: 128.19%;
       text-align: center;
       color: #7D839B;
     }
@@ -435,10 +442,12 @@ input[type="range"]::-webkit-slider-thumb {
       padding-bottom: 100px;
 
       ul.leaders {
+        font-size: 4.8rem;
+        line-height: 219.69%;
         max-width: 40em;
         padding: 0;
         overflow-x: hidden;
-        list-style: none
+        list-style: none;
       }
 
       ul.leaders li:before {
@@ -500,10 +509,12 @@ input[type="range"]::-webkit-slider-thumb {
 .form-section {
   position: relative;
   top: -40px;
+  @extend %container;
+  max-width: 1400px;
 
   .form-box {
-    margin: 0 auto;
-    width: 95%;
+    //margin: 0 auto;
+    //width: 95%;
     background: #3A3D49;
     border-radius: 50px;
     padding: 80px 30px 60px;
@@ -729,19 +740,22 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .faq {
+  padding-top: 200px;
+  padding-bottom: 200px;
   @extend %container;
-  padding: 200px 0;
 
   h2 {
     font-size: 3.6rem;
     font-weight: 500;
+    line-height: 153.69%;
   }
 
   .questions {
     width: 90%;
+    font-size: 1.8rem;
 
     &-item {
-      padding: 15px;
+      padding: 25px 15px 25px 30px;
       box-sizing: border-box;
       /* glow */
       border: 1px solid rgba(255, 255, 255, 0.3);
@@ -768,7 +782,7 @@ input[type="range"]::-webkit-slider-thumb {
           position: absolute;
           display: block;
           content: '+';
-          font-size: 2rem;
+          font-size: 3rem;
           right: 0;
           top: -1rem;
           color: #F9B133;
@@ -781,13 +795,10 @@ input[type="range"]::-webkit-slider-thumb {
 
         p {
           font-weight: 500;
-          font-size: 1.8rem;
-          text-align: center;
         }
       }
 
       &__text {
-        font-size: 1.8rem;
         font-weight: 300;
       }
     }
@@ -810,7 +821,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
 
   .header {
     position: static;
@@ -820,18 +831,22 @@ input[type="range"]::-webkit-slider-thumb {
     }
 
     .mobile-img {
-      height: 40vh;
+      height: 600px;
       margin-top: 40px;
+      justify-content: center;
 
       &__header-bg-1 {
-        width: 90%;
-        background: url('../img/R12 1.png') top center/cover;
-        //margin-top: 100px;
+        width: 300px;
+        background: url('../img/R12 1.png') top 2vh center/cover;
+        position: relative;
+        right: -25px;
       }
 
       &__header-bg-2 {
-        width: 90%;
-        background: url('../img/R12B 1.png') top -3vh center/cover;
+        width: 300px;
+        background: url('../img/R12B 1.png') top -1vh center/cover;
+        position: relative;
+        left: -30px;
       }
     }
   }
@@ -841,24 +856,40 @@ input[type="range"]::-webkit-slider-thumb {
       padding: 50px 30px;
     }
 
+    p {
+      font-size: 1.8rem;
+    }
+
     background: #ffffff;
   }
 
   .economy {
     padding-bottom: 70px;
-    top: 0;
+    top: -50px;
+    background-size: cover;
 
     &-content {
       width: 100%;
       padding-top: 0;
 
       h2 {
-        font-size: 3rem;
+        font-size: 3.6rem;
       }
+    }
+
+    .img-md img {
+      width: 60%;
+      left: 64%;
+    }
+
+    .watermark {
+      font-size: 23rem;
     }
   }
 
   .gentle {
+    background-size: cover;
+
     .gentlee {
       padding-top: 54px;
     }
@@ -872,7 +903,7 @@ input[type="range"]::-webkit-slider-thumb {
     }
 
     h3 {
-      font-size: 2.4rem;
+      font-size: 1.8rem;
     }
 
     &-change-line {
@@ -883,7 +914,7 @@ input[type="range"]::-webkit-slider-thumb {
 
   .no-worries {
     padding: 100px 0 300px;
-    background: url("../img/image 13.png") bottom/600px no-repeat;
+    background: url("../img/image 13.png") bottom/500px no-repeat;
     text-align: center;
 
     h2 {
@@ -908,12 +939,18 @@ input[type="range"]::-webkit-slider-thumb {
       top: -10px;
 
       img {
-        width: 40%;
+        width: 50%;
       }
+
 
       .feature__item {
         &:hover {
           top: 0;
+
+          .mobile {
+            transform: scale(1);
+            display: block;
+          }
         }
       }
     }
@@ -925,6 +962,8 @@ input[type="range"]::-webkit-slider-thumb {
 
       &__table {
         ul.leaders {
+          margin-top: 35px;
+          font-size: 2.4rem;
           max-width: 40em;
           padding: 0;
           overflow-x: hidden;
@@ -1221,10 +1260,17 @@ input[type="range"]::-webkit-slider-thumb {
   .faq {
     padding: 50px 15px;
 
+    h2 {
+      width: 72%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .questions {
       width: 100%;
 
       &-item {
+        padding: 30px;
 
         &__title {
           &-question {
@@ -1289,7 +1335,64 @@ input[type="range"]::-webkit-slider-thumb {
   }
 }
 
+
+@media (max-width: 568px) {
+  .header {
+    position: static;
+
+    &-content {
+      padding-top: 45px;
+    }
+
+    .mobile-img {
+      margin-top: 40px;
+      height: 400px;
+
+      &__header-bg-1 {
+        width: 180px;
+        background: url('../img/R12 1.png') top 2vh center/cover;
+        position: relative;
+        right: -15px;
+      }
+
+      &__header-bg-2 {
+        width: 180px;
+        background: url('../img/R12B 1.png') top -1vh center/cover;
+        position: relative;
+        left: -20px;
+      }
+    }
+  }
+
+
+}
+
+
 @media (max-width: 380px) {
+  .header {
+    .mobile-img {
+      margin-top: 40px;
+      height: 380px;
+
+      &__header-bg-1 {
+        width: 180px;
+        background: url('../img/R12 1.png') top 2vh center/cover;
+        position: relative;
+        right: -15px;
+      }
+
+      &__header-bg-2 {
+        width: 180px;
+        background: url('../img/R12B 1.png') top -1vh center/cover;
+        position: relative;
+        left: -20px;
+      }
+    }
+  }
+
+  .specifications-content__table ul.leaders{
+    font-size: 2rem;
+  }
   .specifications {
     &-content {
       &__table {
