@@ -225,19 +225,6 @@
 </section>
 
 
-<!--<section class="gallery glide" id="gallery">-->
-<!--    <div class="glide__track" data-glide-el="track">-->
-<!--        <div class="grid-container glide__slides">-->
-<!--            <div class="first glide__slide"><img src="img/cozy-living-room-with-sofa-PU5CRHH.png" alt=""></div>-->
-<!--            <div class="second glide__slide"><img src="img/I5.png" alt=""></div>-->
-<!--            <div class="third glide__slide"><img src="img/I1.png" alt=""></div>-->
-<!--            <div class="fourth glide__slide"><img src="img/I4.png" alt=""></div>-->
-<!--            <div class="fifth glide__slide"><img src="img/I2.png" alt=""></div>-->
-<!--            <div class="sixth glide__slide"><img src="img/I8.png" alt=""></div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
-
 
 <section class="gallery glide" id="gallery">
     <div class="glide__track" data-glide-el="track">
@@ -270,25 +257,11 @@
     >
         <div x-show="opened==1" class="form-box form-box-1">
             <h2>Ultra-slim Infrared Heating Panel</h2>
-            <h4>Model: SKUGW001</h4>
 
             <div class="mobile lg:hidden">
                 <div class="flex flex-col align-center">
                     <div class="panel-img mt-24 mb-4">
                         <img src="img/white-panel.png" alt="">
-                    </div>
-                    <p class="mb-4">White Panel</p>
-                    <div class=" counter flex items-center justify-around w-full">
-                        <div class="switch minus white-switch"
-                             @click="(blackQuantity!=0 && whiteQuantity>0)?whiteQuantity--:false">
-                            -
-                        </div>
-                        <input disabled type="number" class="w-4/5" min="1" value="1" x-model="whiteQuantity">
-                        <div class="switch plus white-switch" @click="whiteQuantity++">+</div>
-                    </div>
-
-                    <div class="panel-img mt-24 mb-4">
-                        <img src="img/black-panel.png" alt="">
                     </div>
                     <p class="mb-4">Black Panel</p>
                     <div class=" counter flex items-center justify-around w-full">
@@ -298,6 +271,19 @@
                         </div>
                         <input disabled type="number" class="w-4/5" min="1" value="1" x-model="blackQuantity">
                         <div class="switch plus white-switch" @click="blackQuantity++">+</div>
+                    </div>
+
+                    <div class="panel-img mt-24 mb-4">
+                        <img src="img/black-panel.png" alt="">
+                    </div>
+                    <p class="mb-4">White Panel</p>
+                    <div class=" counter flex items-center justify-around w-full">
+                        <div class="switch minus white-switch"
+                             @click="(blackQuantity!=0 && whiteQuantity>0)?whiteQuantity--:false">
+                            -
+                        </div>
+                        <input disabled type="number" class="w-4/5" min="1" value="1" x-model="whiteQuantity">
+                        <div class="switch plus white-switch" @click="whiteQuantity++">+</div>
                     </div>
 
                     <div class="buttons">
@@ -327,20 +313,6 @@
                     <img src="img/white-panel.png" alt="">
                 </div>
                 <div class="counter-wrapper flex flex-col items-center w-2/5">
-                    <p>White Panel</p>
-                    <div class=" counter flex items-center justify-around">
-                        <div class="switch minus white-switch"
-                             @click="(blackQuantity!=0 && whiteQuantity>0)?whiteQuantity--:false">
-                            -
-                        </div>
-                        <input disabled type="number" min="1" value="1" x-model="whiteQuantity">
-                        <div class="switch plus white-switch" @click="whiteQuantity++">+</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="black-panel hidden lg:flex flex-between items-center">
-                <div class="counter-wrapper flex flex-col items-center w-2/5">
                     <p>Black Panel</p>
                     <div class=" counter flex items-center justify-around">
                         <div class="switch minus white-switch"
@@ -349,6 +321,20 @@
                         </div>
                         <input disabled type="number" min="1" value="1" x-model="blackQuantity">
                         <div class="switch plus white-switch" @click="blackQuantity++">+</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="black-panel hidden lg:flex flex-between items-center">
+                <div class="counter-wrapper flex flex-col items-center w-2/5">
+                    <p>White Panel</p>
+                    <div class=" counter flex items-center justify-around">
+                        <div class="switch minus white-switch"
+                             @click="(blackQuantity!=0 && whiteQuantity>0)?whiteQuantity--:false">
+                            -
+                        </div>
+                        <input disabled type="number" min="1" value="1" x-model="whiteQuantity">
+                        <div class="switch plus white-switch" @click="whiteQuantity++">+</div>
                     </div>
                 </div>
                 <div class="panel-img">
@@ -898,7 +884,7 @@
             whiteQuantity: 1,
             whitePrice: 100,
             blackPrice: 200,
-            showBillingInfo: true,
+            showBillingInfo: false,
             full_name: '',
             phone: '',
             email: '',
@@ -1037,7 +1023,7 @@
                     }
 
                     if (key == 'required_if_billing' && (window.screen.width >= 1024 || this.opened == 4)) {
-                        if (this[field].trim().length == 0 && this.address_shipping_same == 1) {
+                        if (this[field].trim().length == 0 && this.address_shipping_same == 0) {
                             this.validation[field].error = true;
                             this.validation[field].msg = `${title} is required`;
                         } else {

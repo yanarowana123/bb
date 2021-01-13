@@ -369,6 +369,9 @@ input[type=range]::-webkit-slider-thumb {
 }
 .specifications-content__table {
   padding-bottom: 100px;
+  max-width: 980px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .specifications-content__table ul.leaders {
   font-size: 4.8rem;
@@ -786,9 +789,6 @@ input[type=range]::-webkit-slider-thumb {
     padding: 0;
     overflow-x: hidden;
     list-style: none;
-  }
-  .specifications-content__table ul.leaders li:before {
-    display: none;
   }
   .specifications-content__table ul.leaders span:first-child {
     padding-right: 0.33em;
