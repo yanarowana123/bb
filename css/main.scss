@@ -70,6 +70,7 @@ body {
     img {
       width: 75px;
       height: 90px;
+      transform: scale(1.2);
     }
   }
 
@@ -1299,7 +1300,7 @@ input[type="range"]::-webkit-slider-thumb {
       overflow: hidden;
       background-color: #282B34;
       position: relative;
-      max-height: 50px;
+      max-height: 65px;
     }
 
     #myLinks {
@@ -1363,6 +1364,15 @@ input[type="range"]::-webkit-slider-thumb {
 
 }
 
+@media (max-width: 445px) {
+  .form-section input.checkbox:checked + .slider:before {
+    -webkit-transform: translateX(17px);
+    -ms-transform: translateX(17px);
+    transform: translateX(17px);
+  }
+
+}
+
 @media (max-width: 380px) {
   .header {
     .mobile-img {
@@ -1397,6 +1407,18 @@ input[type="range"]::-webkit-slider-thumb {
   }
 
 }
+
+
+@media (max-width: 360px) {
+
+  .form-section input.checkbox:checked + .slider:before {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+
+
 
 .icv__arrow-wrapper {
   display: none !important;

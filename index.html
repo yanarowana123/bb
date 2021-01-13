@@ -225,7 +225,6 @@
 </section>
 
 
-
 <section class="gallery glide" id="gallery">
     <div class="glide__track" data-glide-el="track">
         <div class="grid-container glide__slides">
@@ -1069,6 +1068,13 @@
                 }
             },
             submitData() {
+                var form = document.querySelector('form');
+                var formData = new FormData(form);
+
+                var data = {};
+                for (var [key, value] of formData.entries()) {
+                    data = Object.assign(data, {[key]: value})
+                }
                 for (const field in this.validation) {
                     this.validate(field);
                 }
@@ -1083,7 +1089,7 @@
                     fetch('/contact', {
                         method: 'POST',
                         headers: {'Content-Type': 'application/json'},
-                        body: JSON.stringify(this.formData)
+                        body: JSON.stringify(data)
                     })
                         .then(() => {
                             this.showBillingInfo = true
