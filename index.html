@@ -262,19 +262,6 @@
                     <div class="panel-img mt-24 mb-4">
                         <img src="img/white-panel.png" alt="">
                     </div>
-                    <p class="mb-4">Black Panel</p>
-                    <div class=" counter flex items-center justify-around w-full">
-                        <div class="switch minus white-switch"
-                             @click="(whiteQuantity!=0 && blackQuantity>0)?blackQuantity--:false">
-                            -
-                        </div>
-                        <input disabled type="number" class="w-4/5" min="1" value="1" x-model="blackQuantity">
-                        <div class="switch plus white-switch" @click="blackQuantity++">+</div>
-                    </div>
-
-                    <div class="panel-img mt-24 mb-4">
-                        <img src="img/black-panel.png" alt="">
-                    </div>
                     <p class="mb-4">White Panel</p>
                     <div class=" counter flex items-center justify-around w-full">
                         <div class="switch minus white-switch"
@@ -283,6 +270,19 @@
                         </div>
                         <input disabled type="number" class="w-4/5" min="1" value="1" x-model="whiteQuantity">
                         <div class="switch plus white-switch" @click="whiteQuantity++">+</div>
+                    </div>
+
+                    <div class="panel-img mt-24 mb-4">
+                        <img src="img/black-panel.png" alt="">
+                    </div>
+                    <p class="mb-4">Black Panel</p>
+                    <div class=" counter flex items-center justify-around w-full">
+                        <div class="switch minus white-switch"
+                             @click="(whiteQuantity!=0 && blackQuantity>0)?blackQuantity--:false">
+                            -
+                        </div>
+                        <input disabled type="number" class="w-4/5" min="1" value="1" x-model="blackQuantity">
+                        <div class="switch plus white-switch" @click="blackQuantity++">+</div>
                     </div>
 
                     <div class="buttons">
