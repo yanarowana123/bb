@@ -505,6 +505,9 @@ input[type=range]::-webkit-slider-thumb {
 .form-section .input-wrapper {
   width: 30%;
 }
+.form-section .input-wrapper-full {
+  width: 100%;
+}
 .form-section .input {
   font-size: 1.8rem;
   font-weight: 500;
@@ -888,6 +891,9 @@ input[type=range]::-webkit-slider-thumb {
   }
   .form-section .input-wrapper {
     width: 100%;
+    margin-top: 20px;
+  }
+  .form-section .input-wrapper-full {
     margin-top: 20px;
   }
   .form-section .input {

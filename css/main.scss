@@ -611,6 +611,9 @@ input[type="range"]::-webkit-slider-thumb {
 
   .input-wrapper {
     width: 30%;
+    &-full {
+      width: 100%;
+    }
   }
 
   .input {
@@ -972,7 +975,6 @@ input[type="range"]::-webkit-slider-thumb {
           list-style: none
         }
 
-
         ul.leaders span:first-child {
           padding-right: 0.33em;
           background: white
@@ -1099,6 +1101,9 @@ input[type="range"]::-webkit-slider-thumb {
     .input-wrapper {
       width: 100%;
       margin-top: 20px;
+      &-full {
+        margin-top: 20px;
+      }
     }
 
     .input {
@@ -1408,7 +1413,6 @@ input[type="range"]::-webkit-slider-thumb {
 
 }
 
-
 @media (max-width: 360px) {
 
   .form-section input.checkbox:checked + .slider:before {
@@ -1417,8 +1421,6 @@ input[type="range"]::-webkit-slider-thumb {
     transform: translateX(10px);
   }
 }
-
-
 
 .icv__arrow-wrapper {
   display: none !important;

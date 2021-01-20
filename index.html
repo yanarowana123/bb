@@ -252,6 +252,11 @@
               $watch('city_billing', value => { validate('city_billing') })
               $watch('zip_billing', value => { validate('zip_billing') })
               $watch('address1_billing', value => { validate('address1_billing') })
+              $watch('card_number', value => { validate('card_number') })
+              $watch('name_on_card', value => { validate('name_on_card') })
+              $watch('cvc', value => { validate('cvc') })
+              $watch('expiration_month', value => { validate('expiration_month') })
+              $watch('expiration_year', value => { validate('expiration_year') })
             "
     >
         <div x-show="opened==1" class="form-box form-box-1">
@@ -604,6 +609,83 @@
             </div>
         </div>
 
+        <div x-show="opened==5" class="form-box form-box-2">
+            <div class="flex flex-col">
+                <div class="input-wrapper-full flex flex-col lg:mt-12">
+                    <input type="text"
+                           name="name_on_card"
+                           class="input"
+                           x-bind:placeholder="validation.name_on_card.msg?validation.name_on_card.msg:'Name on Card'"
+                           x-bind:class="{'placeholder-red-400': validation.name_on_card.error } "
+                           x-model="name_on_card">
+                    <span class="text-red-400 mt-2" x-text="validation.name_on_card.msg">
+                        </span>
+                </div>
+
+                <div class="input-wrapper-full flex flex-col lg:mt-12">
+                    <input type="text"
+                           name="card_number"
+                           id="card_number"
+                           class="input"
+                           x-bind:placeholder="validation.card_number.msg?validation.card_number.msg:'Card Number'"
+                           x-bind:class="{'placeholder-red-400': validation.card_number.error } "
+                           x-model="card_number">
+                    <span class="text-red-400 mt-2" x-text="validation.card_number.msg">
+                        </span>
+                </div>
+                <div class="flex flex-col lg:flex-row justify-between lg:mt-12">
+                    <div class="input-wrapper flex flex-col">
+                        <input type="text"
+                               name="cvc"
+                               class="input"
+                               x-bind:placeholder="validation.cvc.msg?validation.cvc.msg:'CVC'"
+                               x-bind:class="{'placeholder-red-400': validation.cvc.error } "
+                               x-model="cvc">
+                        <span class="text-red-400 mt-2" x-text="validation.cvc.msg">
+                        </span>
+                    </div>
+                    <div class="input-wrapper flex flex-col">
+                        <input type="text"
+                               name="expiration_month"
+                               class="input"
+                               x-bind:placeholder="validation.expiration_month.msg?validation.expiration_month.msg:'Expiration Month'"
+                               x-bind:class="{'placeholder-red-400': validation.expiration_month.error } "
+                               x-model="expiration_month">
+                        <span class="text-red-400 mt-2" x-text="validation.expiration_month.msg">
+                        </span>
+                    </div>
+                    <div class="input-wrapper flex flex-col">
+                        <input type="text"
+                               name="expiration year"
+                               class="input"
+                               x-bind:placeholder="validation.expiration_year.msg?validation.expiration_year.msg:'Expiration Year'"
+                               x-bind:class="{'placeholder-red-400': validation.expiration_year.error } "
+                               x-model="expiration_year">
+                        <span class="text-red-400 mt-2" x-text="validation.expiration_year.msg">
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:hidden">
+                <button @click.prevent="submitData()" class="button button-next w-full flex justify-center"
+                        data-id="2"
+                >
+                    Next
+                </button>
+            </div>
+
+            <div class="buttons hidden lg:flex justify-between items-center">
+                <button @click.prevent="opened=2" class="button button-prev" data-id="2">
+                    Prev
+                </button>
+                <button @click.prevent="submitData()" class="button button-next" data-id="2"
+                >
+                    Next
+                </button>
+            </div>
+        </div>
+
         <div x-show="opened==4" class="form-box form-box-3 lg:hidden">
             <h2>Shipping information</h2>
             <h4 class="">Please fill form below.</h4>
@@ -829,6 +911,11 @@
             mask: '+{7}(000)000-00-00'
         });
 
+
+    IMask(
+        document.getElementById('card_number'), {
+            mask: '0000-0000-0000-0000'
+        });
     if (window.screen.width < 1024) {
         new Glide('.interiors', {
             perView: 1.5,
@@ -901,6 +988,11 @@
             address_shipping_same: 1,
             payment_method: 1,
             has_errors: false,
+            name_on_card: '',
+            card_number: '',
+            cvc: '',
+            expiration_month: '',
+            expiration_year: '',
             validation: {
                 full_name: {
                     rule: {
@@ -1007,6 +1099,46 @@
                     error: false,
                     title: 'Promocode'
                 },
+                name_on_card: {
+                    rule: {
+                        required_if_visa: true,
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'Name on Card',
+                },
+                card_number: {
+                    rule: {
+                        required_if_visa_card: true,
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'Card Number',
+                },
+                cvc: {
+                    rule: {
+                        required_if_visa: true,
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'CVC',
+                },
+                expiration_month: {
+                    rule: {
+                        required_if_visa: true,
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'Expiration Month',
+                },
+                expiration_year: {
+                    rule: {
+                        required_if_visa: true,
+                    },
+                    msg: '',
+                    error: false,
+                    title: 'Expiration Year',
+                },
             },
             validate(field) {
                 for (const key in this.validation[field].rule) {
@@ -1029,6 +1161,39 @@
                             this.validation[field].error = false;
                             this.validation[field].msg = ``;
                         }
+                    }
+
+
+                    if (key == 'required_if_visa' && this.opened == 5) {
+                        if (this[field].trim().length == 0 && this.payment_method == 1) {
+                            this.validation[field].error = true;
+                            this.validation[field].msg = `${title} is required`;
+                        } else {
+                            this.validation[field].error = false;
+                            this.validation[field].msg = ``;
+                        }
+                    }
+
+
+                    if (key == 'required_if_visa_card' && this.opened == 5) {
+                        let cardnoVisa = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+                        let cardnoMC = /^(?:5[1-5][0-9]{14})$/;
+
+                        console.log('visa')
+                        console.log(this.card_number.replaceAll('-', '').match(cardnoVisa))
+                        console.log('ms')
+                        console.log(this.card_number.replaceAll('-', '').match(cardnoMC))
+
+                        console.log((!this.card_number.replaceAll('-', '').match(cardnoVisa) || !this.card_number.replaceAll('-', '').match(cardnoMC)))
+
+                        if ((this.card_number.replaceAll('-', '').match(cardnoVisa) || this.card_number.replaceAll('-', '').match(cardnoMC)) && this.payment_method == 1) {
+                            this.validation[field].error = false;
+                            this.validation[field].msg = ``;
+                        } else {
+                            this.validation[field].error = true;
+                            this.validation[field].msg = `${title} is not valid credit card number`
+                        }
+
                     }
 
 
@@ -1068,13 +1233,6 @@
                 }
             },
             submitData() {
-                var form = document.querySelector('form');
-                var formData = new FormData(form);
-
-                var data = {};
-                for (var [key, value] of formData.entries()) {
-                    data = Object.assign(data, {[key]: value})
-                }
                 for (const field in this.validation) {
                     this.validate(field);
                 }
@@ -1084,6 +1242,22 @@
                         this.has_errors = true;
                     }
                 }
+                if (this.payment_method === 1
+                    && !this.has_errors
+                    && this.opened != 5
+                ) {
+                    this.opened = 5;
+                    return;
+                }
+
+                let form = document.querySelector('form');
+                let formData = new FormData(form);
+
+                let data = {};
+                for (let [key, value] of formData.entries()) {
+                    data = Object.assign(data, {[key]: value})
+                }
+
 
                 if (!this.has_errors) {
                     fetch('/contact', {
