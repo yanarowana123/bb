@@ -645,8 +645,11 @@
                         </span>
                     </div>
                     <div class="input-wrapper flex flex-col">
-                        <input type="text"
+                        <input type="number"
                                name="expiration_month"
+                               id="expiration_month"
+                               min="1"
+                               max="12"
                                class="input"
                                x-bind:placeholder="validation.expiration_month.msg?validation.expiration_month.msg:'Expiration Month'"
                                x-bind:class="{'placeholder-red-400': validation.expiration_month.error } "
@@ -655,8 +658,10 @@
                         </span>
                     </div>
                     <div class="input-wrapper flex flex-col">
-                        <input type="text"
-                               name="expiration year"
+                        <input type="number"
+                               name="expiration_year"
+                               id="expiration_year"
+                               min="1"
                                class="input"
                                x-bind:placeholder="validation.expiration_year.msg?validation.expiration_year.msg:'Expiration Year'"
                                x-bind:class="{'placeholder-red-400': validation.expiration_year.error } "
@@ -916,6 +921,19 @@
         document.getElementById('card_number'), {
             mask: '0000-0000-0000-0000'
         });
+
+
+    IMask(
+        document.getElementById('expiration_year'), {
+            mask: '00'
+        });
+
+
+    IMask(
+        document.getElementById('expiration_month'), {
+            mask: '00'
+        });
+
     if (window.screen.width < 1024) {
         new Glide('.interiors', {
             perView: 1.5,
@@ -1053,6 +1071,7 @@
                 },
                 address2: {
                     msg: '',
+                    rule: {null: null},
                     error: false,
                     title: 'Address line 2',
                 },
@@ -1090,12 +1109,13 @@
                 },
                 address2_billing: {
                     msg: '',
+                    rule: {},
                     error: false,
                     title: 'Address line 2',
                 },
                 promocode: {
-
                     msg: '',
+                    rule: {},
                     error: false,
                     title: 'Promocode'
                 },
@@ -1117,7 +1137,7 @@
                 },
                 cvc: {
                     rule: {
-                        required_if_visa: true,
+                        required_if_visa_cvc: true,
                     },
                     msg: '',
                     error: false,
@@ -1125,7 +1145,7 @@
                 },
                 expiration_month: {
                     rule: {
-                        required_if_visa: true,
+                        expiration_month: true,
                     },
                     msg: '',
                     error: false,
@@ -1133,7 +1153,7 @@
                 },
                 expiration_year: {
                     rule: {
-                        required_if_visa: true,
+                        expiration_year: true,
                     },
                     msg: '',
                     error: false,
@@ -1179,13 +1199,6 @@
                         let cardnoVisa = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
                         let cardnoMC = /^(?:5[1-5][0-9]{14})$/;
 
-                        console.log('visa')
-                        console.log(this.card_number.replaceAll('-', '').match(cardnoVisa))
-                        console.log('ms')
-                        console.log(this.card_number.replaceAll('-', '').match(cardnoMC))
-
-                        console.log((!this.card_number.replaceAll('-', '').match(cardnoVisa) || !this.card_number.replaceAll('-', '').match(cardnoMC)))
-
                         if ((this.card_number.replaceAll('-', '').match(cardnoVisa) || this.card_number.replaceAll('-', '').match(cardnoMC)) && this.payment_method == 1) {
                             this.validation[field].error = false;
                             this.validation[field].msg = ``;
@@ -1193,9 +1206,37 @@
                             this.validation[field].error = true;
                             this.validation[field].msg = `${title} is not valid credit card number`
                         }
-
                     }
 
+                    if (key == 'required_if_visa_cvc' && this.opened == 5) {
+                        if (this[field].trim().length != 3 && this.payment_method == 1) {
+                            this.validation[field].error = true;
+                            this.validation[field].msg = `${title} must contain 3 digits`;
+                        } else {
+                            this.validation[field].error = false;
+                            this.validation[field].msg = ``;
+                        }
+                    }
+
+                    if (key == 'expiration_month' && this.opened == 5) {
+                        if (this.expiration_month.length != 2 || !(this.expiration_month > 0 && this.expiration_month < 13) && this.payment_method == 1) {
+                            this.validation[field].error = true;
+                            this.validation[field].msg = `${title} is not valid month`;
+                        } else {
+                            this.validation[field].error = false;
+                            this.validation[field].msg = ``;
+                        }
+                    }
+
+                    if (key == 'expiration_year' && this.opened == 5) {
+                        if (this.expiration_year.length != 2 && this.payment_method == 1) {
+                            this.validation[field].error = true;
+                            this.validation[field].msg = `${title} is not valid year`;
+                        } else {
+                            this.validation[field].error = false;
+                            this.validation[field].msg = ``;
+                        }
+                    }
 
                     if (key == 'email') {
                         const rgx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -1233,6 +1274,7 @@
                 }
             },
             submitData() {
+
                 for (const field in this.validation) {
                     this.validate(field);
                 }
@@ -1242,6 +1284,22 @@
                         this.has_errors = true;
                     }
                 }
+
+                if (this.opened != 5) {
+                    for (const field in this.validation) {
+                        if (("required_if_visa_card" in this.validation[field].rule) && this.validation[field].error == true) {
+                            this.validation[field].error == false;
+                            this.has_errors = false;
+                        }
+
+                        if (("required_if_visa" in this.validation[field].rule) && this.validation[field].error == true) {
+                            this.validation[field].error == false;
+                            this.has_errors = false;
+                        }
+                    }
+                }
+
+
                 if (this.payment_method === 1
                     && !this.has_errors
                     && this.opened != 5
@@ -1249,6 +1307,7 @@
                     this.opened = 5;
                     return;
                 }
+
 
                 let form = document.querySelector('form');
                 let formData = new FormData(form);
